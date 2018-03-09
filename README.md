@@ -14,6 +14,13 @@ Map keyboard shortcuts to execute the script even faster.
 
 **Note:** Contribution to support other Adobe applications as well as Windows is highly encouraged.
 
+## Installtion
+* Download this repository and unzip the package.
+* Copy `VSCode-Adobe-Script-Runner-master` to `/Users/YOURUSER/.vscode/extensions` folder.
+* Launch VSCode and open your own jsx file, or for testing just type `alert("Hello World")`.
+* Launch `Command Palette` with keyboard shortcut `Cmd+Shift+P` and type `Adobe After Effects` and click enter.
+* Hopefully After Effects will fire up and run your script 🙏
+
 ## Settings
 
 Extension exposes the following settings:
