@@ -6,9 +6,10 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Changed
 - Updates `extension.js` to use es6 syntax.
-- Fixed typos in `README.md`
+- Fixed typos in `README.md`.
 
 ## Released
+
 ## [0.0.2] 2018-03-11
 ### Added
 - Support to run scripts inside `Adobe Illustrator`.

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const vscode = require('vscode');
 
-const scriptCommands = {
+const hostApps = {
 	"ae": {
 		"id": 'com.adobe.aftereffects',
 		"exec": 'DoScriptFile',
@@ -29,21 +29,18 @@ const scriptCommands = {
  * @param {any} context vscode.ExtensionContext
  */
 function activate(context) {
-	let hostApps = Object.keys(scriptCommands);
-	for (let i = 0; i < hostApps.length; i++) {
-		let hostApp = hostApps[i];
+	Object.keys(hostApps).forEach(hostApp => {
 		let disposable = vscode.commands.registerCommand(
 			`adobeScriptLauncher.${hostApp}`,
-			() => buildCommand(scriptCommands[hostApp])
+			() => buildCommand(hostApps[hostApp])
 		);
-
 		context.subscriptions.push(disposable);
-	}
+	});
 }
 
 /**
  * @description Implementation of the command with registerCommand.
- * @param {any} hostApp Object, entry from scriptCommands[hostApp].
+ * @param {any} hostApp Object, entry from hostApps[hostApp].
  * @returns {boolean} Nothing on success. 'null' on error.
  */
 function buildCommand(hostApp) {
