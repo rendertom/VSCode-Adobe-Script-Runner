@@ -31,9 +31,9 @@ Map keyboard shortcuts to execute the script even faster.
 
 Extension exposes the following settings:
 
-* `adobeScriptLauncher.saveDirty`: toggle to run unsaved (dirty) files.
-* `adobeScriptLauncher.runUntitled`: toggle to run untitled files. Define location of temporary file in `adobeScriptLauncher.tempFile` setting.
-* `adobeScriptLauncher.tempFile`: location to save temporary file. Used only when `adobeScriptLauncher.runUntitled` is enabled.
+* `adobeScriptRunner.saveDirty`: toggle to run unsaved (dirty) files.
+* `adobeScriptRunner.runUntitled`: toggle to run untitled files. Define location of temporary file in `adobeScriptRunner.tempFile` setting.
+* `adobeScriptRunner.tempFile`: location to save temporary file. Used only when `adobeScriptRunner.runUntitled` is enabled.
 
 ## Known issues
 * Host application does not get focus on script run.

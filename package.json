@@ -16,49 +16,49 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:adobeScriptLauncher.ae",
-		"onCommand:adobeScriptLauncher.ai",
-		"onCommand:adobeScriptLauncher.estk",
-		"onCommand:adobeScriptLauncher.id",
-		"onCommand:adobeScriptLauncher.psd"
+		"onCommand:adobeScriptRunner.ae",
+		"onCommand:adobeScriptRunner.ai",
+		"onCommand:adobeScriptRunner.estk",
+		"onCommand:adobeScriptRunner.id",
+		"onCommand:adobeScriptRunner.psd"
 	],
 	"main": "./extension",
 	"contributes": {
 		"commands": [{
-				"command": "adobeScriptLauncher.ae",
+				"command": "adobeScriptRunner.ae",
 				"title": "Adobe After Effects"
 			},
 			{
-				"command": "adobeScriptLauncher.ai",
+				"command": "adobeScriptRunner.ai",
 				"title": "Adobe Illustrator"
 			},
 			{
-				"command": "adobeScriptLauncher.estk",
+				"command": "adobeScriptRunner.estk",
 				"title": "Adobe ExtendScript Toolkit"
 			},
 			{
-				"command": "adobeScriptLauncher.id",
+				"command": "adobeScriptRunner.id",
 				"title": "Adobe InDesign"
 			},
 			{
-				"command": "adobeScriptLauncher.psd",
+				"command": "adobeScriptRunner.psd",
 				"title": "Adobe Photoshop"
 			}
 		],
 		"configuration": [{
 			"title": "Adobe Script Launcher configuration",
 			"properties": {
-				"adobeScriptLauncher.saveDirty": {
+				"adobeScriptRunner.saveDirty": {
 					"type": "boolean",
 					"default": true,
 					"description": "Save dirty files before evaluating"
 				},
-				"adobeScriptLauncher.runUntitled": {
+				"adobeScriptRunner.runUntitled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Save untitled file before evaluating. Set file destination in 'tempFile' option."
 				},
-				"adobeScriptLauncher.tempFile": {
+				"adobeScriptRunner.tempFile": {
 					"type": "string",
 					"default": "~/.vscode/Snippet.js",
 					"description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."

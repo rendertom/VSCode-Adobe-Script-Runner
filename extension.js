@@ -40,7 +40,7 @@ const hostApps = {
 function activate(context) {
 	Object.keys(hostApps).forEach(hostApp => {
 		let disposable = vscode.commands.registerCommand(
-			`adobeScriptLauncher.${hostApp}`,
+			`adobeScriptRunner.${hostApp}`,
 			() => buildCommand(hostApps[hostApp])
 		);
 		context.subscriptions.push(disposable);
@@ -83,13 +83,13 @@ function buildCommand(hostApp) {
 /**
  * @description Gets path to script file that has to be executed in hostApp.
  *              If document is not saved, then saves it to snippet,
- *              defined in 'adobeScriptLauncher.tempFile'
+ *              defined in 'adobeScriptRunner.tempFile'
  * 
  * @param {any} document vscode.window.activeTextEditor.document.
  * @returns {string} scriptFile as String, or 'null' if cannot get scriptFile.
  */
 function getScriptFile(document) {
-	const config = vscode.workspace.getConfiguration('adobeScriptLauncher');
+	const config = vscode.workspace.getConfiguration('adobeScriptRunner');
 	let scriptFile = document.fileName;
 
 	if (document.isUntitled) {
@@ -110,10 +110,10 @@ function getScriptFile(document) {
 
 /**
  * @description Saves contexts of document to snippet file,
- *              defined in 'adobeScriptLauncher.tempFile'
+ *              defined in 'adobeScriptRunner.tempFile'
  * 
  * @param {object} document vscode.window.activeTextEditor.document.
- * @param {string} tempFile path to tempFile defined in 'adobeScriptLauncher.tempFile'
+ * @param {string} tempFile path to tempFile defined in 'adobeScriptRunner.tempFile'
  * @returns {string} Absdolute path to scriptFile as String.
  */
 function saveFile(document, tempFile) {

@@ -9,6 +9,8 @@ All notable changes to the Adobe Script Runner extension will be documented in t
  
 ### Changed
 - Updates `extension.js` to use es6 syntax.
+- Updates info message to show app name the script has been sent to.
+- Renames settings object `adobeScriptLauncher` to `adobeScriptRunner`.
 - Fixed typos in `README.md`.
 - Saves temp file `Snippet.js` to `~/.vscode` instead of `~/Desktop` folder.
 
