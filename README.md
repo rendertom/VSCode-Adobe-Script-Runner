@@ -4,7 +4,7 @@ Run Adobe After Effects and Adobe Photoshop scripts right from VSCode on Mac.
 
 ## Features
 
-Run commands are accesible via `Command Palette`. Simply click `Cmd+Shit+P` and start typing `Adobe After Effects` or `Adobe Photoshop`. Click enter to run script inside the selected application.
+Run commands are accesible via `Command Palette`. Simply click `Cmd+Shit+P` and start typing `Adobe After Effects`, `Adobe Illustrator` or `Adobe Photoshop`. Click enter to run script inside the selected application.
 
 Extension will open host application first if it's not running, and then execute the script.
 
