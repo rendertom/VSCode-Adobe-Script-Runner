@@ -4,8 +4,14 @@ const path = require('path');
 const vscode = require('vscode');
 
 const scriptCommands = {
-	"ae": 'tell application id "com.adobe.aftereffects" to activate DoScriptFile',
-	"psd": 'tell application id "com.adobe.photoshop" to activate do javascript file',
+	"ae": {
+		"id": 'com.adobe.aftereffects',
+		"exec": 'DoScriptFile',
+	},
+	"psd": {
+		"id": 'com.adobe.photoshop',
+		"exec": 'do javascript file',
+	},
 };
 
 /**
@@ -18,7 +24,7 @@ function activate(context) {
 	for (let i = 0; i < hostApps.length; i++) {
 		let hostApp = hostApps[i];
 		let disposable = vscode.commands.registerCommand(`adobeScriptLauncher.${hostApp}`, function () {
-			buildCommand(hostApp);
+			buildCommand(scriptCommands[hostApp]);
 		});
 
 		context.subscriptions.push(disposable);
@@ -27,7 +33,7 @@ function activate(context) {
 
 /**
  * @description Implementation of the command with registerCommand.
- * @param {any} hostApp String, abbreviation 'ae', 'psd' or similar.
+ * @param {any} hostApp Object, entry from scriptCommands[hostApp].
  * @returns {boolean} Nothing on success. 'null' on error.
  */
 function buildCommand(hostApp) {
@@ -45,7 +51,7 @@ function buildCommand(hostApp) {
 	}
 
 	// Run shell command
-	const command = `osascript -e '${scriptCommands[hostApp]} "${scriptFile}"'`;
+	const command = `osascript -e 'tell application id "${hostApp.id}" to activate ${hostApp.exec} "${scriptFile}"'`;
 	cp.exec(command, onError);
 
 	showInformationMessage('DONE');
