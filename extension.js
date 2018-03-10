@@ -5,23 +5,28 @@ const vscode = require('vscode');
 
 const hostApps = {
 	"ae": {
+		"appName": "Adobe After Effects",
 		"id": 'com.adobe.aftereffects',
 		"exec": 'DoScriptFile',
 	},
 	"ai": {
+		"appName": "Adobe Illustrator",
 		"id": 'com.adobe.illustrator',
 		"exec": 'do javascript file',
 	},
 	"estk": {
+		"appName": "Adobe ExtendScript Toolkit",
 		"id": 'com.adobe.estoolkit-4.0',
 		"exec": 'open',
 	},
 	"id": {
+		"appName": "Adobe InDesign",
 		"id": 'com.adobe.InDesign',
 		"exec": 'do script',
 		"suffix": 'language javascript',
 	},
 	"psd": {
+		"appName": "Adobe Photoshop",
 		"id": 'com.adobe.photoshop',
 		"exec": 'do javascript file',
 	},
@@ -63,6 +68,7 @@ function buildCommand(hostApp) {
 
 	// Run shell command
 	const {
+		appName,
 		id,
 		exec,
 		suffix = ''
@@ -71,7 +77,7 @@ function buildCommand(hostApp) {
 	console.log('Running shell command:', command);
 	cp.exec(command, onError);
 
-	showInformationMessage('DONE');
+	showInformationMessage(`Script sent to ${appName}`);
 }
 
 /**
