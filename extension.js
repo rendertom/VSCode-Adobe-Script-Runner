@@ -32,9 +32,10 @@ function activate(context) {
 	let hostApps = Object.keys(scriptCommands);
 	for (let i = 0; i < hostApps.length; i++) {
 		let hostApp = hostApps[i];
-		let disposable = vscode.commands.registerCommand(`adobeScriptLauncher.${hostApp}`, function () {
-			buildCommand(scriptCommands[hostApp]);
-		});
+		let disposable = vscode.commands.registerCommand(
+			`adobeScriptLauncher.${hostApp}`,
+			() => buildCommand(scriptCommands[hostApp])
+		);
 
 		context.subscriptions.push(disposable);
 	}
@@ -60,9 +61,7 @@ function buildCommand(hostApp) {
 	}
 
 	// Run shell command
-	const id = hostApp.id;
-	const exec = hostApp.exec;
-	const suffix = hostApp.suffix || "";
+	const { id, exec, suffix = '' } = hostApp;
 	const command = `osascript -e 'tell application id "${id}" to activate ${exec} "${scriptFile}" ${suffix}'`;
 	console.log('Running shell command:', command);
 	cp.exec(command, onError);
@@ -71,7 +70,7 @@ function buildCommand(hostApp) {
 }
 
 /**
- * @description Rets path to script file that has to be executed in hostApp.
+ * @description Gets path to script file that has to be executed in hostApp.
  *              If document is not saved, then saves it to snippet,
  *              defined in 'adobeScriptLauncher.tempFile'
  * 
