@@ -62,7 +62,11 @@ function buildCommand(hostApp) {
 	}
 
 	// Run shell command
-	const { id, exec, suffix = '' } = hostApp;
+	const {
+		id,
+		exec,
+		suffix = ''
+	} = hostApp;
 	const command = `osascript -e 'tell application id "${id}" to activate ${exec} "${scriptFile}" ${suffix}'`;
 	console.log('Running shell command:', command);
 	cp.exec(command, onError);
@@ -178,6 +182,6 @@ function showInformationMessage(string) {
 	vscode.window.showInformationMessage(string);
 }
 
-function deactivate() { }
+function deactivate() {}
 exports.activate = activate;
 exports.deactivate = deactivate;

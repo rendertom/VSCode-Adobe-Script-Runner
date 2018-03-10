@@ -1,94 +1,91 @@
 {
-    "name": "adobe-script-runner",
-    "displayName": "Adobe Script Runner",
-    "description": "Run Adobe After Effects and Adobe Photoshop scripts from VSCode on Mac",
-    "version": "0.0.2",
-    "publisher": "renderTom",
-    "icon": "icon.png",
-    "galleryBanner": {
-        "color": "#34495E",
-        "theme": "dark"
-    },
-    "engines": {
-        "vscode": "^1.21.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:adobeScriptLauncher.ae",
-        "onCommand:adobeScriptLauncher.ai",
-        "onCommand:adobeScriptLauncher.estk",
-        "onCommand:adobeScriptLauncher.id",
-        "onCommand:adobeScriptLauncher.psd"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "adobeScriptLauncher.ae",
-                "title": "Adobe After Effects"
-            },
-            {
-                "command": "adobeScriptLauncher.ai",
-                "title": "Adobe Illustrator"
-            },
-            {
-                "command": "adobeScriptLauncher.estk",
-                "title": "Adobe ExtendScript Toolkit"
-            },
-            {
-                "command": "adobeScriptLauncher.id",
-                "title": "Adobe InDesign"
-            },
-            {
-                "command": "adobeScriptLauncher.psd",
-                "title": "Adobe Photoshop"
-            }
-        ],
-        "configuration": [
-            {
-                "title": "Adobe Script Launcher configuration",
-                "properties": {
-                    "adobeScriptLauncher.saveDirty": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "Save dirty files before evaluating"
-                    },
-                    "adobeScriptLauncher.runUntitled": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "Save untitled file before evaluating. Set file destination in 'tempFile' option."
-                    },
-                    "adobeScriptLauncher.tempFile": {
-                        "type": "string",
-                        "default": "~/.vscode/Snippet.js",
-                        "description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
-                    }
-                }
-            }
-        ]
-    },
-    "keywords": [
+	"name": "adobe-script-runner",
+	"displayName": "Adobe Script Runner",
+	"description": "Run Adobe After Effects and Adobe Photoshop scripts from VSCode on Mac",
+	"version": "0.0.2",
+	"publisher": "renderTom",
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#34495E",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.21.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:adobeScriptLauncher.ae",
+		"onCommand:adobeScriptLauncher.ai",
+		"onCommand:adobeScriptLauncher.estk",
+		"onCommand:adobeScriptLauncher.id",
+		"onCommand:adobeScriptLauncher.psd"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [{
+				"command": "adobeScriptLauncher.ae",
+				"title": "Adobe After Effects"
+			},
+			{
+				"command": "adobeScriptLauncher.ai",
+				"title": "Adobe Illustrator"
+			},
+			{
+				"command": "adobeScriptLauncher.estk",
+				"title": "Adobe ExtendScript Toolkit"
+			},
+			{
+				"command": "adobeScriptLauncher.id",
+				"title": "Adobe InDesign"
+			},
+			{
+				"command": "adobeScriptLauncher.psd",
+				"title": "Adobe Photoshop"
+			}
+		],
+		"configuration": [{
+			"title": "Adobe Script Launcher configuration",
+			"properties": {
+				"adobeScriptLauncher.saveDirty": {
+					"type": "boolean",
+					"default": true,
+					"description": "Save dirty files before evaluating"
+				},
+				"adobeScriptLauncher.runUntitled": {
+					"type": "boolean",
+					"default": true,
+					"description": "Save untitled file before evaluating. Set file destination in 'tempFile' option."
+				},
+				"adobeScriptLauncher.tempFile": {
+					"type": "string",
+					"default": "~/.vscode/Snippet.js",
+					"description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
+				}
+			}
+		}]
+	},
+	"keywords": [
 		"ESTK",
 		"AE",
 		"After Effects",
 		"PSD",
 		"Photoshop"
 	],
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "eslint": "^4.11.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
-    }
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
+	},
+	"devDependencies": {
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6",
+		"eslint": "^4.11.0",
+		"@types/node": "^7.0.43",
+		"@types/mocha": "^2.2.42"
+	}
 }
