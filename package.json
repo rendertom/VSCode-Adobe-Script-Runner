@@ -17,6 +17,7 @@
     ],
     "activationEvents": [
         "onCommand:adobeScriptLauncher.ae",
+        "onCommand:adobeScriptLauncher.ai",
         "onCommand:adobeScriptLauncher.psd"
     ],
     "main": "./extension",
@@ -25,6 +26,10 @@
             {
                 "command": "adobeScriptLauncher.ae",
                 "title": "Adobe After Effects"
+            },
+            {
+                "command": "adobeScriptLauncher.ai",
+                "title": "Adobe Illustrator"
             },
             {
                 "command": "adobeScriptLauncher.psd",

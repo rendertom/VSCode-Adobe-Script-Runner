@@ -8,6 +8,10 @@ const scriptCommands = {
 		"id": 'com.adobe.aftereffects',
 		"exec": 'DoScriptFile',
 	},
+	"ai": {
+		"id": 'com.adobe.illustrator',
+		"exec": 'do javascript file',
+	},
 	"psd": {
 		"id": 'com.adobe.photoshop',
 		"exec": 'do javascript file',
