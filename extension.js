@@ -4,8 +4,8 @@ const path = require('path');
 const vscode = require('vscode');
 
 const scriptCommands = {
-    "ae": 'tell application "Adobe After Effects CC 2018" to activate DoScriptFile',
-    "psd": 'tell application "Adobe Photoshop CC 2018" to activate do javascript file',
+    "ae": 'tell application id "com.adobe.aftereffects" to activate DoScriptFile',
+    "psd": 'tell application id "com.adobe.photoshop" to activate do javascript file',
 };
 
 /**

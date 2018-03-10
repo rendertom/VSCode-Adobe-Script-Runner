@@ -14,7 +14,7 @@ Map keyboard shortcuts to execute the script even faster.
 
 **Note:** Contribution to support other Adobe applications as well as Windows is highly encouraged.
 
-## Installtion
+## Installation
 * Download this repository and unzip the package.
 * Copy `VSCode-Adobe-Script-Runner-master` to `/Users/YOURUSER/.vscode/extensions` folder.
 * Launch VSCode and open your own jsx file, or for testing just type `alert("Hello World")`.
@@ -28,6 +28,9 @@ Extension exposes the following settings:
 * `adobeScriptLauncher.saveDirty`: toggle to run unsaved (dirty) files.
 * `adobeScriptLauncher.runUntitled`: toggle to run untitled files. Define location of temporary file in `adobeScriptLauncher.tempFile` setting.
 * `adobeScriptLauncher.tempFile`: location to save temporary file. Used only when `adobeScriptLauncher.runUntitled` is enabled.
+
+## Known issues
+* Host application does not get focus on script run.
 
 ## Release Notes
 
