@@ -4,6 +4,9 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ## [Unreleased]
 
+### Added
+- Support to open scripts inside `Adobe ExtendScript Toolkit`.
+ 
 ### Changed
 - Updates `extension.js` to use es6 syntax.
 - Fixed typos in `README.md`.

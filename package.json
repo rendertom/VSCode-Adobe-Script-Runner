@@ -18,6 +18,7 @@
     "activationEvents": [
         "onCommand:adobeScriptLauncher.ae",
         "onCommand:adobeScriptLauncher.ai",
+        "onCommand:adobeScriptLauncher.estk",
         "onCommand:adobeScriptLauncher.id",
         "onCommand:adobeScriptLauncher.psd"
     ],
@@ -31,6 +32,10 @@
             {
                 "command": "adobeScriptLauncher.ai",
                 "title": "Adobe Illustrator"
+            },
+            {
+                "command": "adobeScriptLauncher.estk",
+                "title": "Adobe ExtendScript Toolkit"
             },
             {
                 "command": "adobeScriptLauncher.id",

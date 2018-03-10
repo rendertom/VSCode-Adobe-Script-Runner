@@ -12,6 +12,10 @@ const hostApps = {
 		"id": 'com.adobe.illustrator',
 		"exec": 'do javascript file',
 	},
+	"estk": {
+		"id": 'com.adobe.estoolkit-4.0',
+		"exec": 'open',
+	},
 	"id": {
 		"id": 'com.adobe.InDesign',
 		"exec": 'do script',
