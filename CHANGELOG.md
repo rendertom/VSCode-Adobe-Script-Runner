@@ -10,6 +10,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 ### Changed
 - Updates `extension.js` to use es6 syntax.
 - Fixed typos in `README.md`.
+- Saves temp file `Snippet.js` to `~/.vscode` instead of `~/Desktop` folder.
 
 ## Released
 
