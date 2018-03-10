@@ -1,6 +1,8 @@
 # Adobe Script Runner
 Script runner for Adobe applications right from VSCode on Mac.
 
+![Adobe Script Runner](/resources/Adobe-Script-Runner.gif)
+
 ## Supported applications
 - Adobe After Effects
 - Adobe ExtendScript Toolkit

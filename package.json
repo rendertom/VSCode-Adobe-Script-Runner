@@ -2,9 +2,9 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe After Effects and Adobe Photoshop scripts from VSCode on Mac",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "renderTom",
-	"icon": "icon.png",
+	"icon": "resources/icon.png",
 	"galleryBanner": {
 		"color": "#34495E",
 		"theme": "dark"
@@ -46,12 +46,13 @@
 			}
 		],
 		"configuration": [{
+			"type": "object",
 			"title": "Adobe Script Launcher configuration",
 			"properties": {
 				"adobeScriptRunner.saveDirty": {
 					"type": "boolean",
 					"default": true,
-					"description": "Save dirty files before evaluating"
+					"description": "Save dirty files before evaluating."
 				},
 				"adobeScriptRunner.runUntitled": {
 					"type": "boolean",
@@ -67,11 +68,11 @@
 		}]
 	},
 	"keywords": [
-		"ESTK",
-		"AE",
+		"Adobe",
+		"Estk",
 		"After Effects",
-		"PSD",
-		"Photoshop"
+		"Photoshop",
+		"InDesign"
 	],
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",

@@ -6,13 +6,15 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Added
 - Support to open scripts inside `Adobe ExtendScript Toolkit`.
+- Looping gif to README.md file that looks fantastic.
  
 ### Changed
-- Updates `extension.js` to use es6 syntax.
-- Updates info message to show app name the script has been sent to.
-- Renames settings object `adobeScriptLauncher` to `adobeScriptRunner`.
+- Updated `extension.js` to use es6 syntax.
+- Updated info message to show app name the script has been sent to.
+- Renamed settings object `adobeScriptLauncher` to `adobeScriptRunner`.
 - Fixed typos in `README.md`.
-- Saves temp file `Snippet.js` to `~/.vscode` instead of `~/Desktop` folder.
+- Changed location of temp file `Snippet.js` to `~/.vscode` instead of `~/Desktop` folder.
+- Created `resources` folder to dump all image files there.
 
 ## Released
 
