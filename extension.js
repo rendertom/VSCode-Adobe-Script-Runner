@@ -3,21 +3,30 @@ const fs = require('fs');
 const path = require('path');
 const vscode = require('vscode');
 
-const scriptCommands = {
+const hostApps = {
 	"ae": {
+		"appName": "Adobe After Effects",
 		"id": 'com.adobe.aftereffects',
 		"exec": 'DoScriptFile',
 	},
 	"ai": {
+		"appName": "Adobe Illustrator",
 		"id": 'com.adobe.illustrator',
 		"exec": 'do javascript file',
 	},
+	"estk": {
+		"appName": "Adobe ExtendScript Toolkit",
+		"id": 'com.adobe.estoolkit-4.0',
+		"exec": 'open',
+	},
 	"id": {
+		"appName": "Adobe InDesign",
 		"id": 'com.adobe.InDesign',
 		"exec": 'do script',
 		"suffix": 'language javascript',
 	},
 	"psd": {
+		"appName": "Adobe Photoshop",
 		"id": 'com.adobe.photoshop',
 		"exec": 'do javascript file',
 	},
@@ -29,20 +38,18 @@ const scriptCommands = {
  * @param {any} context vscode.ExtensionContext
  */
 function activate(context) {
-	let hostApps = Object.keys(scriptCommands);
-	for (let i = 0; i < hostApps.length; i++) {
-		let hostApp = hostApps[i];
-		let disposable = vscode.commands.registerCommand(`adobeScriptLauncher.${hostApp}`, function () {
-			buildCommand(scriptCommands[hostApp]);
-		});
-
+	Object.keys(hostApps).forEach(hostApp => {
+		let disposable = vscode.commands.registerCommand(
+			`adobeScriptRunner.${hostApp}`,
+			() => buildCommand(hostApps[hostApp])
+		);
 		context.subscriptions.push(disposable);
-	}
+	});
 }
 
 /**
  * @description Implementation of the command with registerCommand.
- * @param {any} hostApp Object, entry from scriptCommands[hostApp].
+ * @param {any} hostApp Object, entry from hostApps[hostApp].
  * @returns {boolean} Nothing on success. 'null' on error.
  */
 function buildCommand(hostApp) {
@@ -60,26 +67,29 @@ function buildCommand(hostApp) {
 	}
 
 	// Run shell command
-	const id = hostApp.id;
-	const exec = hostApp.exec;
-	const suffix = hostApp.suffix || "";
+	const {
+		appName,
+		id,
+		exec,
+		suffix = ''
+	} = hostApp;
 	const command = `osascript -e 'tell application id "${id}" to activate ${exec} "${scriptFile}" ${suffix}'`;
 	console.log('Running shell command:', command);
 	cp.exec(command, onError);
 
-	showInformationMessage('DONE');
+	showInformationMessage(`Script sent to ${appName}`);
 }
 
 /**
- * @description Rets path to script file that has to be executed in hostApp.
+ * @description Gets path to script file that has to be executed in hostApp.
  *              If document is not saved, then saves it to snippet,
- *              defined in 'adobeScriptLauncher.tempFile'
+ *              defined in 'adobeScriptRunner.tempFile'
  * 
  * @param {any} document vscode.window.activeTextEditor.document.
  * @returns {string} scriptFile as String, or 'null' if cannot get scriptFile.
  */
 function getScriptFile(document) {
-	const config = vscode.workspace.getConfiguration('adobeScriptLauncher');
+	const config = vscode.workspace.getConfiguration('adobeScriptRunner');
 	let scriptFile = document.fileName;
 
 	if (document.isUntitled) {
@@ -100,10 +110,10 @@ function getScriptFile(document) {
 
 /**
  * @description Saves contexts of document to snippet file,
- *              defined in 'adobeScriptLauncher.tempFile'
+ *              defined in 'adobeScriptRunner.tempFile'
  * 
  * @param {object} document vscode.window.activeTextEditor.document.
- * @param {string} tempFile path to tempFile defined in 'adobeScriptLauncher.tempFile'
+ * @param {string} tempFile path to tempFile defined in 'adobeScriptRunner.tempFile'
  * @returns {string} Absdolute path to scriptFile as String.
  */
 function saveFile(document, tempFile) {
@@ -178,6 +188,6 @@ function showInformationMessage(string) {
 	vscode.window.showInformationMessage(string);
 }
 
-function deactivate() { }
+function deactivate() {}
 exports.activate = activate;
 exports.deactivate = deactivate;
