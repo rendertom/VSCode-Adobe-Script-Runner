@@ -18,6 +18,7 @@
     "activationEvents": [
         "onCommand:adobeScriptLauncher.ae",
         "onCommand:adobeScriptLauncher.ai",
+        "onCommand:adobeScriptLauncher.id",
         "onCommand:adobeScriptLauncher.psd"
     ],
     "main": "./extension",
@@ -30,6 +31,10 @@
             {
                 "command": "adobeScriptLauncher.ai",
                 "title": "Adobe Illustrator"
+            },
+            {
+                "command": "adobeScriptLauncher.id",
+                "title": "Adobe InDesign"
             },
             {
                 "command": "adobeScriptLauncher.psd",

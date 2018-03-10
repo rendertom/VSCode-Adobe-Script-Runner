@@ -1,10 +1,15 @@
 # Adobe Script Runner
+Script runner for Adobe applications right from VSCode on Mac.
 
-Run Adobe After Effects and Adobe Photoshop scripts right from VSCode on Mac.
+## Supported applications
+- Adobe After Effects
+- Adobe Illustrator
+- Adobe InDesign
+- Adobe Photoshop
 
 ## Features
 
-Run commands are accesible via `Command Palette`. Simply click `Cmd+Shit+P` and start typing `Adobe After Effects`, `Adobe Illustrator` or `Adobe Photoshop`. Click enter to run script inside the selected application.
+Run commands are accesible via `Command Palette`. Simply click `F1` or `Cmd+Shit+P` and start typing the name on `supporter applications`. Click enter to run script inside the selected application.
 
 Extension will open host application first if it's not running, and then execute the script.
 
@@ -18,7 +23,7 @@ Map keyboard shortcuts to execute the script even faster.
 * Download this repository and unzip the package.
 * Copy `VSCode-Adobe-Script-Runner-master` to `/Users/YOURUSER/.vscode/extensions` folder.
 * Launch VSCode and open your own jsx file, or for testing just type `alert("Hello World")`.
-* Launch `Command Palette` with keyboard shortcut `Cmd+Shift+P` and type `Adobe After Effects` and click enter.
+* Launch `Command Palette` with keyboard shortcut `F1` or `Cmd+Shift+P` and type `Adobe After Effects` and click enter.
 * Hopefully After Effects will fire up and run your script 🙏
 
 ## Settings
@@ -31,10 +36,3 @@ Extension exposes the following settings:
 
 ## Known issues
 * Host application does not get focus on script run.
-
-## Release Notes
-
-### 0.0.1
-2018-03-10 Released for public testing.
-
------------------------------------------------------------------------------------------------------------

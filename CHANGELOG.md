@@ -7,6 +7,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 ## [0.0.2] 2018-03-11
 ### Added
 - Support to run scripts inside `Adobe Illustrator`.
+- Support to run scripts inside `Adobe InDesign`.
 
 ### Changed
 - README.md and CHANGELOG.md files to reflect changes.

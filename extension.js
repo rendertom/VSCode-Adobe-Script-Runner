@@ -12,6 +12,11 @@ const scriptCommands = {
 		"id": 'com.adobe.illustrator',
 		"exec": 'do javascript file',
 	},
+	"id": {
+		"id": 'com.adobe.InDesign',
+		"exec": 'do script',
+		"suffix": 'language javascript',
+	},
 	"psd": {
 		"id": 'com.adobe.photoshop',
 		"exec": 'do javascript file',
@@ -55,7 +60,11 @@ function buildCommand(hostApp) {
 	}
 
 	// Run shell command
-	const command = `osascript -e 'tell application id "${hostApp.id}" to activate ${hostApp.exec} "${scriptFile}"'`;
+	const id = hostApp.id;
+	const exec = hostApp.exec;
+	const suffix = hostApp.suffix || "";
+	const command = `osascript -e 'tell application id "${id}" to activate ${exec} "${scriptFile}" ${suffix}'`;
+	console.log('Running shell command:', command);
 	cp.exec(command, onError);
 
 	showInformationMessage('DONE');
