@@ -62,7 +62,7 @@
                     },
                     "adobeScriptLauncher.tempFile": {
                         "type": "string",
-                        "default": "~/Desktop/snippet.js",
+                        "default": "~/.vscode/Snippet.js",
                         "description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
                     }
                 }
