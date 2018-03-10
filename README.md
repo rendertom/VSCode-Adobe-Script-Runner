@@ -9,7 +9,7 @@ Script runner for Adobe applications right from VSCode on Mac.
 
 ## Features
 
-Run commands are accesible via `Command Palette`. Simply click `F1` or `Cmd+Shit+P` and start typing the name on `supporter applications`. Click enter to run script inside the selected application.
+Run commands are accesible via `Command Palette`. Simply click `F1` or `Cmd+Shit+P` and start typing the name of `supported applications`. Click enter to run script inside the selected application.
 
 Extension will open host application first if it's not running, and then execute the script.
 
