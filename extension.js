@@ -1,34 +1,50 @@
 const cp = require('child_process');
 const fs = require('fs');
+const osName = getOSName();
 const path = require('path');
 const vscode = require('vscode');
 
 const hostApps = {
 	"ae": {
 		"appName": "Adobe After Effects",
-		"id": 'com.adobe.aftereffects',
-		"exec": 'DoScriptFile',
+		"mac": {
+			"appId": 'com.adobe.aftereffects',
+			"exec": 'DoScriptFile',
+		},
+		"win": undefined,
 	},
 	"ai": {
 		"appName": "Adobe Illustrator",
-		"id": 'com.adobe.illustrator',
-		"exec": 'do javascript file',
+		"mac": {
+			"appId": 'com.adobe.illustrator',
+			"exec": 'do javascript file',
+		},
+		"win": undefined,
 	},
 	"estk": {
 		"appName": "Adobe ExtendScript Toolkit",
-		"id": 'com.adobe.estoolkit-4.0',
-		"exec": 'open',
+		"mac": {
+			"appId": 'com.adobe.estoolkit-4.0',
+			"exec": 'open',
+		},
+		"win": undefined,
 	},
 	"id": {
 		"appName": "Adobe InDesign",
-		"id": 'com.adobe.InDesign',
-		"exec": 'do script',
-		"suffix": 'language javascript',
+		"mac": {
+			"appId": 'com.adobe.InDesign',
+			"exec": 'do script',
+			"suffix": 'language javascript',
+		},
+		"win": undefined,
 	},
 	"psd": {
 		"appName": "Adobe Photoshop",
-		"id": 'com.adobe.photoshop',
-		"exec": 'do javascript file',
+		"mac": {
+			"appId": 'com.adobe.photoshop',
+			"exec": 'do javascript file',
+		},
+		"win": undefined,
 	},
 };
 
@@ -53,6 +69,11 @@ function activate(context) {
  * @returns {boolean} Nothing on success. 'null' on error.
  */
 function buildCommand(hostApp) {
+	if (!hostApp[osName]) {
+		showErrorMessage(`${osName} OS is not supported for this task.`);
+		return null;
+	}
+
 	const activeTextEditor = vscode.window.activeTextEditor;
 	if (!activeTextEditor) {
 		showErrorMessage('No active editor detected.');
@@ -66,18 +87,30 @@ function buildCommand(hostApp) {
 		return null;
 	}
 
-	// Run shell command
+	if (osName === "mac") {
+		runShellCommand(hostApp[osName], scriptFile);
+	}
+
+	showInformationMessage(`Script sent to ${hostApp.appName}`);
+}
+
+/**
+ * @description Runs Apple Script (osascript) to launch script
+ * 				in hostApp.
+ * 
+ * @param {object} args Arguments for shell command
+ * @param {string} scriptFile Path to jsx file.
+ */
+function runShellCommand(args, scriptFile) {
 	const {
-		appName,
-		id,
+		appId,
 		exec,
-		suffix = ''
-	} = hostApp;
-	const command = `osascript -e 'tell application id "${id}" to activate ${exec} "${scriptFile}" ${suffix}'`;
+		suffix = '',
+	} = args;
+
+	const command = `osascript -e 'tell application id "${appId}" to activate ${exec} "${scriptFile}" ${suffix}'`;
 	console.log('Running shell command:', command);
 	cp.exec(command, onError);
-
-	showInformationMessage(`Script sent to ${appName}`);
 }
 
 /**
@@ -167,6 +200,24 @@ function resolveHome(filepath) {
 		filepath = path.join(process.env.HOME, filepath.slice(1));
 	}
 	return filepath;
+}
+
+/**
+ * @description Gets short name of operating system
+ * @returns {string} "mac" or "win".
+ */
+function getOSName() {
+	let osName;
+	switch (process.platform) {
+		case "win32":
+			osName = "win";
+			break;
+		case "darwin":
+			osName = "mac";
+			break;
+	}
+
+	return osName;
 }
 
 function onError(err, result, raw) {
