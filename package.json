@@ -69,30 +69,25 @@
 					"default": "~/.vscode/Snippet.js",
 					"description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
 				},
-				"adobeScriptRunner.winAEexe": {
-					"type": "string",
-					"default": "C:/Program Files/Adobe/Adobe After Effects CC 2018/Support Files/AfterFX.exe",
-					"description": "Path to AE exe."
-				},
-				"adobeScriptRunner.winPSexe": {
-					"type": "string",
-					"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2018/Photoshop.exe",
-					"description": "Path to PS exe."
-				},
-				"adobeScriptRunner.winESTKexe": {
+				"adobeScriptRunner.winEstkExe": {
 					"type": "string",
 					"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
-					"description": "Path to ESTK exe."
+					"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
 				},
-				"adobeScriptRunner.winILexe": {
+				"adobeScriptRunner.winAfterFxExe": {
+					"type": "string",
+					"default": "C:/Program Files/Adobe/Adobe After Effects CC 2018/Support Files/AfterFX.exe",
+					"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
+				},
+				"adobeScriptRunner.winIllustratorExe": {
 					"type": "string",
 					"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/Illustrator.exe",
-					"description": "Path to ILLUSTRATOR exe."
+					"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
 				},
-				"adobeScriptRunner.winIDexe": {
+				"adobeScriptRunner.winPhotoshopExe": {
 					"type": "string",
-					"default": "C:/Program Files/Adobe/Adobe InDesign CC 2018/InDesign.exe",
-					"description": "Path to INDESIGN exe."
+					"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2018/Photoshop.exe",
+					"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
 				}
 			}
 		}]
