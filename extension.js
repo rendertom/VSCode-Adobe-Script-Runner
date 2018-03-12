@@ -11,7 +11,10 @@ const hostApps = {
 			"appId": 'com.adobe.aftereffects',
 			"exec": 'DoScriptFile',
 		},
-		"win": undefined,
+		"win": {
+			"exePath" : "winAEexe",
+			"arg" : "-r",
+		},
 	},
 	"ai": {
 		"appName": "Adobe Illustrator",
@@ -19,7 +22,10 @@ const hostApps = {
 			"appId": 'com.adobe.illustrator',
 			"exec": 'do javascript file',
 		},
-		"win": undefined,
+		"win" : {
+			"exePath" : "winILexe",
+			"arg" : "-r",
+		},
 	},
 	"estk": {
 		"appName": "Adobe ExtendScript Toolkit",
@@ -27,7 +33,10 @@ const hostApps = {
 			"appId": 'com.adobe.estoolkit-4.0',
 			"exec": 'open',
 		},
-		"win": undefined,
+		"win": {
+			"exePath" : "winESTKexe",
+			"arg" : "-run",
+		},
 	},
 	"id": {
 		"appName": "Adobe InDesign",
@@ -36,7 +45,10 @@ const hostApps = {
 			"exec": 'do script',
 			"suffix": 'language javascript',
 		},
-		"win": undefined,
+		"win": {
+			"exePath" : "winIDexe",
+			"arg" : "-run",
+		},
 	},
 	"psd": {
 		"appName": "Adobe Photoshop",
@@ -44,7 +56,10 @@ const hostApps = {
 			"appId": 'com.adobe.photoshop',
 			"exec": 'do javascript file',
 		},
-		"win": undefined,
+		"win": {
+			"exePath" : "winPSexe",
+			"arg" : "-r",
+		},
 	},
 };
 
@@ -91,7 +106,39 @@ function buildCommand(hostApp) {
 		runShellCommand(hostApp[osName], scriptFile);
 	}
 
+	if (osName === "win") {
+		const config = vscode.workspace.getConfiguration('adobeScriptRunner');
+		const keyName = hostApp[osName].exePath;
+
+		const pathToExe = config[keyName];
+		if (pathToExe === "") {
+			showErrorMessage(`Please set path to exe ${hostApp.appName} exe file in preferences.`);
+			return;
+		}
+
+		if (!fs.existsSync(pathToExe)) {
+			showErrorMessage(`Bad path to ${hostApp.appName} exe file in preferences.`);
+			return;
+		}
+		console.log(pathToExe);
+		// cp.execFileSync(pathToExe, ['-r', scriptFile]);
+		
+		// const command = `"${pathToExe}" -r ${scriptFile}`;
+		// console.log('Running shell command:', command);
+		// cp.exec(command, onError);
+
+		// -run for ESTK
+		// others seems to work with -r
+		// cp.execFile(pathToExe, ['-r', scriptFile], onError);
+		mmm = cp.execFile(pathToExe, [hostApp[osName].arg, scriptFile],onError);
+
+	}
+
 	showInformationMessage(`Script sent to ${hostApp.appName}`);
+
+
+
+
 }
 
 /**
@@ -225,6 +272,8 @@ function onError(err, result, raw) {
 		showErrorMessage(err.message);
 		return console.error(err);
 	}
+	console.log(result);
+	conosle.log(raw);
 }
 
 function isDirty(document) {
