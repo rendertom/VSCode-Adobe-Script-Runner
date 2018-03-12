@@ -7,6 +7,7 @@ Script runner for Adobe applications right from VSCode on Mac.
 - Adobe After Effects
 - Adobe ExtendScript Toolkit
 - Adobe Illustrator
+- Adobe InCopy
 - Adobe InDesign
 - Adobe Photoshop
 

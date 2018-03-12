@@ -38,6 +38,18 @@ const hostApps = {
 			"arg" : "-run",
 		},
 	},
+	"ic": {
+		"appName": "Adobe InCopy",
+		"mac": {
+			"appId": 'com.adobe.incopy',
+			"exec": 'do script',
+			"suffix": 'language javascript',
+		},
+		"win": {
+			"exePath" : "winIDexe",
+			"arg" : "-run",
+		},
+	},
 	"id": {
 		"appName": "Adobe InDesign",
 		"mac": {

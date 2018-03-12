@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe After Effects and Adobe Photoshop scripts from VSCode on Mac",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -19,6 +19,7 @@
 		"onCommand:adobeScriptRunner.ae",
 		"onCommand:adobeScriptRunner.ai",
 		"onCommand:adobeScriptRunner.estk",
+		"onCommand:adobeScriptRunner.ic",
 		"onCommand:adobeScriptRunner.id",
 		"onCommand:adobeScriptRunner.psd"
 	],
@@ -35,6 +36,10 @@
 			{
 				"command": "adobeScriptRunner.estk",
 				"title": "Adobe ExtendScript Toolkit"
+			},
+			{
+				"command": "adobeScriptRunner.ic",
+				"title": "Adobe InCopy"
 			},
 			{
 				"command": "adobeScriptRunner.id",
