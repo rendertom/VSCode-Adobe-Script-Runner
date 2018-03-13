@@ -82,7 +82,7 @@ function buildCommand(hostApp) {
 	let appExe = '';
 	if (osName === 'win') {
 		// InDesign and InCopy does not expose 'appExe' in preferences - they are launched via Visual Basic magic.
-		if (tempCommand.match('{appExe}')) {
+		if (tempCommand.includes('{appExe}')) {
 			appExe = getExePath(applicationName);
 			if (!appExe || !fs.existsSync(appExe)) {
 				showErrorMessage(`Unable to find ${applicationName} executable defined in preferences. Make sure you have that path set-up correctly.`);

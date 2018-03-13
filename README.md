@@ -1,5 +1,5 @@
 # Adobe Script Runner
-Script runner for Adobe applications right from VSCode on Mac.
+Script runner for Adobe applications right from VSCode.
 
 ![Adobe Script Runner](/resources/Adobe-Script-Runner.gif)
 
@@ -19,7 +19,7 @@ Extension will open host application first if it's not running, and then execute
 
 > Tip: You don't need to have file saved inside VSCode. Extension will be able to run code from unsaved documents. Kaboom!
 
-Map keyboard shortcuts to execute the script even faster.
+Map keyboard shortcuts to execute the script even faster. Read how to do this on [Key Bindings for Visual Studio Code](https://code.visualstudio.com/docs/getstarted/keybindings) page.
 
 **Note:** Contribution to support other Adobe applications as well as Windows is highly encouraged.
 
@@ -51,7 +51,7 @@ Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension expose
 * `adobeScriptRunner.winIllustratorExe`: path to Adobe Illustrator executable (Illustrator.exe).
 * `adobeScriptRunner.winPhotoshopExe`: path to Adobe Photoshop executable (Photoshop.exe).
 
-Executable paths for InCopy and InDesign for Windows are not exposed because they are handles differently then the rest of the apps. Go figure Adobe ¯\\\_(ツ)\_/¯
+Executable paths for InCopy and InDesign for Windows are not exposed because they are handled differently than the rest of the apps. Go figure Adobe ¯\\\_(ツ)\_/¯
 
 
 ## Known issues
