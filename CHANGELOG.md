@@ -4,12 +4,12 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ## [Unreleased]
 
+## Released
+
 ## [0.1.0] 2018-03-13
 ### Added
 - Support to open scripts inside `Adobe InCopy`.
 - Support for Windows.
-
-## Released
 
 ## [0.0.3] 2018-03-12
 ### Added
