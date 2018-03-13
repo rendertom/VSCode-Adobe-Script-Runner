@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe After Effects and Adobe Photoshop scripts from VSCode on Mac",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -19,6 +19,7 @@
 		"onCommand:adobeScriptRunner.ae",
 		"onCommand:adobeScriptRunner.ai",
 		"onCommand:adobeScriptRunner.estk",
+		"onCommand:adobeScriptRunner.ic",
 		"onCommand:adobeScriptRunner.id",
 		"onCommand:adobeScriptRunner.psd"
 	],
@@ -35,6 +36,10 @@
 			{
 				"command": "adobeScriptRunner.estk",
 				"title": "Adobe ExtendScript Toolkit"
+			},
+			{
+				"command": "adobeScriptRunner.ic",
+				"title": "Adobe InCopy"
 			},
 			{
 				"command": "adobeScriptRunner.id",
@@ -63,10 +68,31 @@
 					"type": "string",
 					"default": "~/.vscode/Snippet.js",
 					"description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
+				},
+				"adobeScriptRunner.winEstkExe": {
+					"type": "string",
+					"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
+					"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
+				},
+				"adobeScriptRunner.winAfterFxExe": {
+					"type": "string",
+					"default": "C:/Program Files/Adobe/Adobe After Effects CC 2018/Support Files/AfterFX.exe",
+					"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
+				},
+				"adobeScriptRunner.winIllustratorExe": {
+					"type": "string",
+					"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/Illustrator.exe",
+					"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
+				},
+				"adobeScriptRunner.winPhotoshopExe": {
+					"type": "string",
+					"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2018/Photoshop.exe",
+					"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
 				}
 			}
 		}]
 	},
+	
 	"keywords": [
 		"Adobe",
 		"Estk",

@@ -3,32 +3,38 @@ const fs = require('fs');
 const path = require('path');
 const vscode = require('vscode');
 
+const config = vscode.workspace.getConfiguration('adobeScriptRunner');
+const osName = getOSName();
 const hostApps = {
-	"ae": {
-		"appName": "Adobe After Effects",
-		"id": 'com.adobe.aftereffects',
-		"exec": 'DoScriptFile',
+	'ae': {
+		'appName': 'Adobe After Effects',
+		'mac': `osascript -e 'tell application id "com.adobe.aftereffects" to activate DoScriptFile "{scriptFile}"'`,
+		'win': `"{appExe}" -r {scriptFile}`,
 	},
-	"ai": {
-		"appName": "Adobe Illustrator",
-		"id": 'com.adobe.illustrator',
-		"exec": 'do javascript file',
+	'ai': {
+		'appName': 'Adobe Illustrator',
+		'mac': `osascript -e 'tell application id "com.adobe.illustrator" to activate do javascript file "{scriptFile}"'`,
+		'win': `"{appExe}" -r {scriptFile}`,
 	},
-	"estk": {
-		"appName": "Adobe ExtendScript Toolkit",
-		"id": 'com.adobe.estoolkit-4.0',
-		"exec": 'open',
+	'estk': {
+		'appName': 'Adobe ExtendScript Toolkit',
+		'mac': `osascript -e 'tell application id "com.adobe.estoolkit-4.0" to activate open "{scriptFile}"'`,
+		'win': `"{appExe}" -run {scriptFile}`,
 	},
-	"id": {
-		"appName": "Adobe InDesign",
-		"id": 'com.adobe.InDesign',
-		"exec": 'do script',
-		"suffix": 'language javascript',
+	'ic': {
+		'appName': 'Adobe InCopy',
+		'mac': `osascript -e 'tell application id "com.adobe.InCopy" to activate do script "{scriptFile}" language javascript'`,
+		'win': `powershell -command "$app = new-object -comobject InCopy.Application; $app.DoScript('{scriptFile}', 1246973031)"`, //http://jongware.mit.edu/idcs6js/pe_ScriptLanguage.html
 	},
-	"psd": {
-		"appName": "Adobe Photoshop",
-		"id": 'com.adobe.photoshop',
-		"exec": 'do javascript file',
+	'id': {
+		'appName': 'Adobe InDesign',
+		'mac': `osascript -e 'tell application id "com.adobe.InDesign" to activate do script "{scriptFile}" language javascript'`,
+		'win': `powershell -command "$app = new-object -comobject InDesign.Application; $app.DoScript('{scriptFile}', 1246973031)"`, //http://jongware.mit.edu/idcs6js/pe_ScriptLanguage.html
+	},
+	'psd': {
+		'appName': 'Adobe Photoshop',
+		'mac': `osascript -e 'tell application id "com.adobe.photoshop" to activate do javascript file "{scriptFile}"'`,
+		'win': `"{appExe}" -r {scriptFile}`,
 	},
 };
 
@@ -66,18 +72,33 @@ function buildCommand(hostApp) {
 		return null;
 	}
 
-	// Run shell command
-	const {
-		appName,
-		id,
-		exec,
-		suffix = ''
-	} = hostApp;
-	const command = `osascript -e 'tell application id "${id}" to activate ${exec} "${scriptFile}" ${suffix}'`;
+	const applicationName = hostApp.appName;
+	const tempCommand = hostApp[osName];
+	if (!tempCommand) {
+		showErrorMessage(`${applicationName} is not hooked-up to work with ${osName} os.`);
+		return null;
+	}
+
+	let appExe = '';
+	if (osName === 'win') {
+		// InDesign and InCopy does not expose 'appExe' in preferences - they are launched via Visual Basic magic.
+		if (tempCommand.includes('{appExe}')) {
+			appExe = getExePath(applicationName);
+			if (!appExe || !fs.existsSync(appExe)) {
+				showErrorMessage(`Unable to find ${applicationName} executable defined in preferences. Make sure you have that path set-up correctly.`);
+				return null;
+			}
+		}
+	}
+
+	const command = tempCommand
+		.replace('{appExe}', appExe)
+		.replace('{scriptFile}', scriptFile);
+
 	console.log('Running shell command:', command);
 	cp.exec(command, onError);
 
-	showInformationMessage(`Script sent to ${appName}`);
+	showInformationMessage(`Script sent to ${applicationName}`);
 }
 
 /**
@@ -89,7 +110,6 @@ function buildCommand(hostApp) {
  * @returns {string} scriptFile as String, or 'null' if cannot get scriptFile.
  */
 function getScriptFile(document) {
-	const config = vscode.workspace.getConfiguration('adobeScriptRunner');
 	let scriptFile = document.fileName;
 
 	if (document.isUntitled) {
@@ -169,11 +189,55 @@ function resolveHome(filepath) {
 	return filepath;
 }
 
+/**
+ * @description Gets short name of operating system
+ * @returns {string} "mac" or "win".
+ */
+function getOSName() {
+	let osName;
+	switch (process.platform) {
+		case "win32":
+			osName = "win";
+			break;
+		case "darwin":
+			osName = "mac";
+			break;
+	}
+
+	return osName;
+}
+
+/**
+ * @description Gets app.exe path from user preferences
+ * 
+ * @param {string} applicationName Full name of application, aka "Adobe After Effects"
+ * @returns {string} Path to app.exe of 'null' if path not set.
+ */
+function getExePath(applicationName) {
+	let appExe;
+	for (let propertyName in config) {
+		appExe = config[propertyName];
+		if (!config.hasOwnProperty(propertyName) || !isString(appExe)) {
+			continue;
+		}
+
+		if (appExe.includes(applicationName)) {
+			return appExe;
+		}
+	}
+	return null;
+}
+
 function onError(err, result, raw) {
 	if (err) {
-		showErrorMessage(err.message);
 		return console.error(err);
 	}
+	console.log(result);
+	console.log(raw);
+}
+
+function isString(value) {
+	return typeof value === "string";
 }
 
 function isDirty(document) {
@@ -188,6 +252,6 @@ function showInformationMessage(string) {
 	vscode.window.showInformationMessage(string);
 }
 
-function deactivate() {}
+function deactivate() { }
 exports.activate = activate;
 exports.deactivate = deactivate;
