@@ -24,13 +24,12 @@ Map keyboard shortcuts to execute the script even faster. Read how to do this on
 **Note:** Contribution to support other Adobe applications as well as Windows is highly encouraged.
 
 ## Installation
-* ### From Git.hub
+* ### From VSCode Marketplace
+    * Get it from [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=renderTom.adobe-script-runner).
 
+* ### From GitHub
     * Download this repository and unzip the package.
     * Copy `VSCode-Adobe-Script-Runner-master` to `/Users/YOURUSER/.vscode/extensions` folder.
-
-* ### ~~From VSCode Marketplace~~
-    * Extension is not published in the market just yet.
 
 ## In action
 * Launch VSCode and open your own jsx file, or for testing just type `alert("Hello World")`.
