@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -25,7 +25,8 @@
 	],
 	"main": "./extension",
 	"contributes": {
-		"commands": [{
+		"commands": [
+			{
 				"command": "adobeScriptRunner.ae",
 				"title": "Adobe After Effects"
 			},
@@ -50,49 +51,58 @@
 				"title": "Adobe Photoshop"
 			}
 		],
-		"configuration": [{
-			"type": "object",
-			"title": "Adobe Script Launcher configuration",
-			"properties": {
-				"adobeScriptRunner.saveDirty": {
-					"type": "boolean",
-					"default": true,
-					"description": "Save dirty files before evaluating."
-				},
-				"adobeScriptRunner.runUntitled": {
-					"type": "boolean",
-					"default": true,
-					"description": "Save untitled file before evaluating. Set file destination in 'tempFile' option."
-				},
-				"adobeScriptRunner.tempFile": {
-					"type": "string",
-					"default": "~/.vscode/Snippet.js",
-					"description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
-				},
-				"adobeScriptRunner.winEstkExe": {
-					"type": "string",
-					"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
-					"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
-				},
-				"adobeScriptRunner.winAfterFxExe": {
-					"type": "string",
-					"default": "C:/Program Files/Adobe/Adobe After Effects CC 2018/Support Files/AfterFX.exe",
-					"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
-				},
-				"adobeScriptRunner.winIllustratorExe": {
-					"type": "string",
-					"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/Illustrator.exe",
-					"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
-				},
-				"adobeScriptRunner.winPhotoshopExe": {
-					"type": "string",
-					"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2018/Photoshop.exe",
-					"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
+		"configuration": [
+			{
+				"type": "object",
+				"title": "Adobe Script Runner configuration",
+				"properties": {
+					"adobeScriptRunner.saveDirty": {
+						"type": "boolean",
+						"default": true,
+						"description": "Save dirty files before evaluating."
+					},
+					"adobeScriptRunner.runUntitled": {
+						"type": "boolean",
+						"default": true,
+						"description": "Save untitled file before evaluating. Set file destination in 'tempFile' option."
+					},
+					"adobeScriptRunner.tempFile": {
+						"type": "string",
+						"default": "~/.vscode/Snippet.js",
+						"description": "Saves untitled document to temporary file. Used only when 'saveUndefined' is set to 'true'."
+					},
+					"adobeScriptRunner.winEstkExe": {
+						"type": "string",
+						"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
+						"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
+					},
+					"adobeScriptRunner.winAfterFxExe": {
+						"type": "string",
+						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2018/Support Files/AfterFX.exe",
+						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
+					},
+					"adobeScriptRunner.winIllustratorExe": {
+						"type": "string",
+						"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/Illustrator.exe",
+						"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
+					},
+					"adobeScriptRunner.winPhotoshopExe": {
+						"type": "string",
+						"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2018/Photoshop.exe",
+						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
+					}
 				}
 			}
-		}]
+		],
+		"keybindings": [
+			{
+				"command": "adobeScriptRunner.ae",
+				"key": "ctrl+r",
+				"mac": "cmd+r",
+				"when": "editorTextFocus"
+			}
+		]
 	},
-	
 	"keywords": [
 		"Adobe",
 		"Estk",
