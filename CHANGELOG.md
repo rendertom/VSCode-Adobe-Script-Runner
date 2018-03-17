@@ -4,6 +4,10 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ## [Unreleased]
 
+- Fixed bug when settings were not registered until app restart.
+- Fixed issue with HOME "~/" paths.
+- Changed code flow. Splits everything to modules for easier maintenance and development. Also makes it easier to other apps to adopt the functionality.
+
 ## Released
 
 ## [0.1.2] 2018-03-14

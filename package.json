@@ -23,7 +23,7 @@
 		"onCommand:adobeScriptRunner.id",
 		"onCommand:adobeScriptRunner.psd"
 	],
-	"main": "./extension",
+	"main": "./lib/extension",
 	"contributes": {
 		"commands": [
 			{
