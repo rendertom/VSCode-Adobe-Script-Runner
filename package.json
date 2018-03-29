@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -23,7 +23,7 @@
 		"onCommand:adobeScriptRunner.id",
 		"onCommand:adobeScriptRunner.psd"
 	],
-	"main": "./extension",
+	"main": "./lib/extension",
 	"contributes": {
 		"commands": [
 			{

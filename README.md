@@ -1,5 +1,6 @@
 # Adobe Script Runner
-Script runner for Adobe applications right from VSCode.
+
+Script runner for Adobe applications right from VSCode. Extension also available for [Atom.io](https://atom.io/packages/adobe-script-runner).
 
 ![Adobe Script Runner](/resources/Adobe-Script-Runner.gif)
 

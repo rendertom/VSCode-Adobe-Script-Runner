@@ -6,6 +6,13 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ## Released
 
+## [0.2.0] 2018-03-29
+
+- Fixed bug when settings were not registered until app restart.
+- Fixed issue with HOME "~/" paths.
+- Changed code flow. Splits everything to modules for easier maintenance and development. Also makes it easier for other apps to adopt the functionality.
+- Ports functionality to [Atom.io](https://atom.io/packages/adobe-script-runner).
+
 ## [0.1.2] 2018-03-14
 
 ### Added
