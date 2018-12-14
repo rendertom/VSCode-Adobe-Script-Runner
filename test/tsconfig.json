@@ -5,7 +5,7 @@
   // This setup allows you to work in .ts files to use the very helpful auto-complete of app DOMs
   // and all the benefits of typescript while supporting using Adobe Script Runner commands.
   //
-  // Preview: 
+  // Preview: https://gfycat.com/ImpressiveFondGreatargus
   //
   // After saving this file into ./host/ (or any parent of or same folder as your scripts),
   // hit Ctrl+Shift+B, and choose 'tcs:watch (relative path to this file)' to run this task.
