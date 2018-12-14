@@ -1,1 +1,1 @@
-alert(app.documents[0].name);
+alert(app.name);

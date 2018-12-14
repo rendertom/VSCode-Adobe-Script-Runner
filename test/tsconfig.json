@@ -1,5 +1,4 @@
 {
-  //
   // Compile your typescript file into .jsx in same folder on every save.
   //
   // This setup allows you to work in .ts files to use the very helpful auto-complete of app DOMs
