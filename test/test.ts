@@ -1,0 +1,1 @@
+alert(app.documents[0].name);
