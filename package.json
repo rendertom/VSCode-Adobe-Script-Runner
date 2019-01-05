@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -78,17 +78,17 @@
 					},
 					"adobeScriptRunner.winAfterFxExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2018/Support Files/AfterFX.exe",
+						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2019/Support Files/AfterFX.exe",
 						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
 					},
 					"adobeScriptRunner.winIllustratorExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/Illustrator.exe",
+						"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2019/Support Files/Contents/Windows/Illustrator.exe",
 						"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
 					},
 					"adobeScriptRunner.winPhotoshopExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2018/Photoshop.exe",
+						"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2019/Photoshop.exe",
 						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
 					}
 				}
