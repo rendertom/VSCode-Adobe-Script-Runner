@@ -4,12 +4,12 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ## [Unreleased]
 
+## Released
+
 ## [0.2.1] 2019-01-05
 
-- Updates default Windows paths to 2019 CC version.
-- Updates descriptions for "Run Untitled", "Save Dirty", and "Temp File" in extensions Settings window.
-
-## Released
+- Updates default Windows paths to CC2019 version.
+- Updates descriptions for `Run Untitled`, `Save Dirty`, and `Temp File` in extensions Settings window.
 
 ## [0.2.0] 2018-03-29
 
