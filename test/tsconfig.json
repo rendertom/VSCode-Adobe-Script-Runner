@@ -1,0 +1,37 @@
+{
+  // Compile your typescript file into .jsx in same folder on every save.
+  //
+  // This setup allows you to work in .ts files to use the very helpful auto-complete of app DOMs
+  // and all the benefits of typescript while supporting using Adobe Script Runner commands.
+  //
+  // Preview: https://gfycat.com/ImpressiveFondGreatargus
+  //
+  // After saving this file into ./host/ (or any parent of or same folder as your scripts),
+  // hit Ctrl+Shift+B, and choose 'tcs:watch (relative path to this file)' to run this task.
+  //
+  "compileOnSave": true,
+  "compilerOptions": {
+    // The output file can be explicitly defined
+    "outFile": "./host.jsx",
+    "allowJs": true,
+    "noLib": true,
+    "types": [
+      // Once you've run `npm init -y`, `npm install pravdomil/types-for-adobe` in terminal
+      // targeting your directory, paths to supported apps will be node_modules/...
+      //
+      "types-for-adobe/illustrator/2015.3"
+      // "types-for-adobe/AfterEffects/2018"
+      // "types-for-adobe/Photoshop/2015.5"
+      // "types-for-adobe/Premiere/2018"
+      // "types-for-adobe/InDesign/2018"
+      // "types-for-adobe/Audition/2018"
+    ]
+  },
+  "files": [
+    // The typescript file can be explicitly defined to prevent compiling multiple files
+    "host.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
