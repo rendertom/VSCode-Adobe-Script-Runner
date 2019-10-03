@@ -90,6 +90,17 @@
 						"type": "string",
 						"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2019/Photoshop.exe",
 						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
+					},
+					"adobeScriptRunner.evaluateToken": {
+						"type": "boolean",
+						"default": true,
+						"description": "Evaluate file in token"
+					},
+					"adobeScriptRunner.searchLimit": {
+						"type": "number",
+						"default": 10,
+						"description": "How deep to search",
+						"minimum": -1
 					}
 				}
 			}
