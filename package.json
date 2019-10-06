@@ -95,12 +95,6 @@
 						"type": "boolean",
 						"default": true,
 						"description": "Evaluate file in token"
-					},
-					"adobeScriptRunner.searchLimit": {
-						"type": "number",
-						"default": 10,
-						"description": "How deep to search",
-						"minimum": -1
 					}
 				}
 			}
