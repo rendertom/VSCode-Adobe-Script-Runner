@@ -68,9 +68,8 @@ For more information about keybinding check official [Key Bindings for Visual St
 
 Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension exposes the following settings:
 
-- `adobeScriptRunner.executeUntitledDocument`: Whether to execute Untitled document. A temporary file will be saved to path defined in `adobeScriptRunner.temporaryFile` section prior to execution.
 - `adobeScriptRunner.saveFileBeforeExecution`: Whether to save file before execution.
-- `adobeScriptRunner.temporaryFile`: Path to a temporary file where Untitled document gets saved prior to execution. Used only when `adobeScriptRunner.executeUntitledDocument` is enabled.
+- `adobeScriptRunner.temporaryFile`: Path to a temporary file where Untitled document gets saved prior to execution. Used only when active document does not have a path.
 
 **For Windows users only:**
 

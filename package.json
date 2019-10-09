@@ -56,15 +56,20 @@
 				"type": "object",
 				"title": "Adobe Script Runner configuration",
 				"properties": {
-					"adobeScriptRunner.evaluateToken": {
-						"type": "boolean",
-						"default": true,
-						"markdownDescription": "Whether to search for `Adobe-Script-Runner \"path/To/File\"` token in active document, and execute file within the quotes. See the [Evaluate Token](https://github.com/rendertom/VSCode-Adobe-Script-Runner#evaluate-token) for valid examples."
+					"adobeScriptRunner.executeThis": {
+						"type": ["string", "null"],
+						"default": null,
+						"markdownDescription": "TODO"
 					},
-					"adobeScriptRunner.executeUntitledDocument": {
+					"adobeScriptRunner.executeFileFromToken": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Whether to execute Untitled document. A temporary file will be saved to path defined in **Temporary File** section prior to execution."
+						"markdownDescription": "Whether to search for `Adobe-Script-Runner \"path/To/File\"` token in active document, and execute file within the quotes. This option shadows **Execute File From Workspace Config** option. See the [Evaluate Token](https://github.com/rendertom/VSCode-Adobe-Script-Runner#evaluate-token) for valid examples."
+					},
+					"adobeScriptRunner.executeFileFromConfig": {
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Whether to execute file, defined in current Workspace config file `.vscode/settings.json`. This option is shadowed by **Evaluate Token** option. See the [TODO](https://github.com/rendertom/VSCode-Adobe-Script-Runner#evaluate-token) for valid examples."
 					},
 					"adobeScriptRunner.saveFileBeforeExecution": {
 						"type": "boolean",
