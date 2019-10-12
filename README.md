@@ -15,7 +15,7 @@ Script runner for Adobe applications right from VSCode. Extension available for 
 
 ## Features
 
-Adobe Script Runner executes script in the active viewer by default. However, when working multi-file scripts, it is common to set a path to execute a master file, i.e `index.js`, from within a file that's in the active view. Such behavior can be modified using [Token](#token) or setting up a [execute this](#execute-this) file in the user settings.
+Adobe Script Runner executes script in the active viewer by default. However, when working with multi-file scripts, it is common to set a path to execute a master file, i.e `index.js`, from within a file that's in the active view. Such behavior can be modified using [Token](#token) or setting up [execute this](#execute-this) file in the settings.
 
 Run commands are accessible via `Command Palette`. Simply click `F1` or `Cmd+Shift+P` and start typing the name of `supported applications`. Click enter to run the script inside the selected application.
 
@@ -58,17 +58,9 @@ The file path gets resolved by joining the path of the file in the viewer and th
 
 ## Execute this
 
-Use this option to set-up a path to a file to execute always, ignoring the file in the viewer, globally or per-project basis.
+Use this option to set-up a path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. To do so, open settings (`Cmd+,` on Mac or `Ctrl+,` on Windows) and set the path to a file in **Extensions -> Adobe Script Runner -> Execute This**.
 
-To do so, open Settings.json file (`Cmd+,` on Mac or `Ctrl+,` on Windows) and navigate to **Extensions -> Adobe Script Runner -> Execute This -> Edit in settings.json**. Then add following command:
-
-```JSON
-{
-    "adobeScriptRunner.executeThis": "path/to/file.jsx"
-}
-```
-
-The file path gets resolved by joining the path in settings.json and the Workspace (or Root `/`) folder.
+The file path gets resolved by joining this path and the Workspace (or Root `/`) folder.
 
 ## Key bindings
 

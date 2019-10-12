@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -79,7 +79,7 @@
 					"adobeScriptRunner.temporaryFile": {
 						"type": "string",
 						"default": "~/.vscode/Snippet.js",
-						"markdownDescription": "Path to a temporary file where Untitled document gets saved prior to execution."
+						"description": "Path to a temporary file where Untitled document gets saved prior to execution."
 					},
 					"adobeScriptRunner.winAfterFxExe": {
 						"type": "string",
