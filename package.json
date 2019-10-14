@@ -81,12 +81,12 @@
 						"default": "~/.vscode/Snippet.js",
 						"description": "Path to a temporary file where Untitled document gets saved prior to execution."
 					},
-					"adobeScriptRunner.winAfterFxExe": {
+					"adobeScriptRunner.winAfterEffectsExe": {
 						"type": "string",
 						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2019/Support Files/AfterFX.exe",
 						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
 					},
-					"adobeScriptRunner.winEstkExe": {
+					"adobeScriptRunner.winExtendscriptToolkitExe": {
 						"type": "string",
 						"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
 						"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."

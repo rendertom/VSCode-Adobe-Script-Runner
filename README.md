@@ -95,8 +95,8 @@ Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension expose
 
 **For Windows users only:**
 
-- `adobeScriptRunner.winAfterFxExe`: path to Adobe After Effects executable (AfterFX.exe).
-- `adobeScriptRunner.winEstkExe`: path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe).
+- `adobeScriptRunner.winAfterEffectsExe`: path to Adobe After Effects executable (AfterFX.exe).
+- `adobeScriptRunner.winExtendscriptToolkitExe`: path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe).
 - `adobeScriptRunner.winIllustratorExe`: path to Adobe Illustrator executable (Illustrator.exe).
 - `adobeScriptRunner.winPhotoshopExe`: path to Adobe Photoshop executable (Photoshop.exe).
 
