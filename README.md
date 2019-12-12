@@ -15,8 +15,6 @@ Script runner for Adobe applications right from VSCode. Extension available for 
 
 ## Features
 
-Adobe Script Runner executes script in the active viewer by default. However, when working with multi-file scripts, it is common to set a path to execute a master file, i.e `index.js`, from within a file that's in the active view. Such behavior can be modified using [Token](#token) or setting up [execute this](#execute-this) file in the settings.
-
 Run commands are accessible via `Command Palette`. Simply click `F1` or `Cmd+Shift+P` and start typing the name of `supported applications`. Click enter to run the script inside the selected application.
 
 The extension will open host application first if it's not running, and then execute the script.
@@ -24,6 +22,8 @@ The extension will open host application first if it's not running, and then exe
 > Tip: You don't need to have the file saved inside VSCode. The extension will be able to run code from unsaved documents.
 
 Map keyboard shortcuts to execute a script even faster - `Cmd+R` is bind to run a script inside After Effects by default. Read how to change it in [Key bindings](#key-bindings).
+
+Adobe Script Runner executes script in the active viewer by default. However, when working with multi-file scripts, it is common to set a path to execute a master file, i.e `index.js`, from within a file that's in the active view. Such behavior can be modified using [Token](#token) or setting up [execute this](#execute-this) file in the settings.
 
 ## Installation
 
@@ -40,27 +40,6 @@ Map keyboard shortcuts to execute a script even faster - `Cmd+R` is bind to run 
 - Launch VSCode and open jsx file, or for testing simply type `alert("Hello World");`.
 - Click `Cmd+R` on Mac or `Ctrl+R` on Windows, or launch `Command Palette` with keyboard shortcut `F1` or `Cmd+Shift+P`, and type `Adobe After Effects` and click enter.
 - Hopefully After Effects will fire up and execute your script 🙏
-
-## Token
-
-Use token to execute a different file, rather than the one in the viewer. Add `Adobe-script-runner "path/to/file.jsx"` at the beginning of the file in the active document to always execute the file between quotes.
-
-```javascript
-/*
-	Adobe-script-runner '../../index.js'
-	Executes file between quotes rather than the one in the active viewer.
-*/
-
-alert('Hello World'); // This line never gets executed, unless `index.js` is referencing the file in viewer.
-```
-
-The file path gets resolved by joining the path of the file in the viewer and the file within the quotes.
-
-## Execute this
-
-Use this option to set-up a path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. To do so, open settings (`Cmd+,` on Mac or `Ctrl+,` on Windows) and set the path to a file in **Extensions -> Adobe Script Runner -> Execute This**.
-
-The file path gets resolved by joining this path and the Workspace (or Root `/`) folder.
 
 ## Key bindings
 
@@ -82,6 +61,27 @@ The result should look something like this:
 ```
 
 For more information about keybinding check official [Key Bindings for Visual Studio Code](https://code.visualstudio.com/docs/getstarted/keybindings).
+
+## Token
+
+Use token to execute a different file, rather than the one in the viewer. Add `Adobe-script-runner "path/to/file.jsx"` at the beginning of the file in the active document to always execute the file between quotes.
+
+```javascript
+/*
+	Adobe-script-runner '../../index.js'
+	Executes file between quotes rather than the one in the active viewer.
+*/
+
+alert('Hello World'); // This line never gets executed, unless `index.js` is referencing the file in viewer.
+```
+
+The file path gets resolved by joining the path of the file in the viewer and the file within the quotes.
+
+## Execute this
+
+Use this option to set-up a path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. To do so, open settings (`Cmd+,` on Mac or `Ctrl+,` on Windows) and set the path to a file in **Extensions -> Adobe Script Runner -> Execute This**.
+
+The file path gets resolved by joining this path and the Workspace (or Root `/`) folder.
 
 ## Settings
 
