@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -56,30 +56,40 @@
 				"type": "object",
 				"title": "Adobe Script Runner configuration",
 				"properties": {
-					"adobeScriptRunner.saveDirty": {
+					"adobeScriptRunner.executeFileFromConfig": {
 						"type": "boolean",
 						"default": true,
-						"description": "Save dirty document before evaluating."
+						"markdownDescription": "Whether to execute file, defined in config `settings.json` file. This option is shadowed by **Execute File From Token** option. See more in [Execute this](https://github.com/rendertom/VSCode-Adobe-Script-Runner#execute-this) section."
 					},
-					"adobeScriptRunner.runUntitled": {
+					"adobeScriptRunner.executeFileFromToken": {
 						"type": "boolean",
 						"default": true,
-						"description": "Evaluates untitled document.\nNote: document has to be saved prior to evaluating, therefore check 'Temp File' option to set temporary file path."
+						"markdownDescription": "Whether to search for `Adobe-Script-Runner \"path/to/file.jsx\"` token in active document, and execute file within the quotes. This option shadows **Execute File From Config** option. See more in [Token](https://github.com/rendertom/VSCode-Adobe-Script-Runner#token) section."
 					},
-					"adobeScriptRunner.tempFile": {
+					"adobeScriptRunner.executeThis": {
+						"type": "string",
+						"default": null,
+						"markdownDescription": "A path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. See more in [Execute this](https://github.com/rendertom/VSCode-Adobe-Script-Runner#execute-this) section."
+					},
+					"adobeScriptRunner.saveFileBeforeExecution": {
+						"type": "boolean",
+						"default": true,
+						"description": "Whether to save file before execution."
+					},
+					"adobeScriptRunner.temporaryFile": {
 						"type": "string",
 						"default": "~/.vscode/Snippet.js",
-						"description": "Path to temporary file where untitled documents are being saved prior to evaluating. Used only when 'Run Untitled' is set to 'true'."
+						"description": "Path to a temporary file where Untitled document gets saved prior to execution."
 					},
-					"adobeScriptRunner.winEstkExe": {
-						"type": "string",
-						"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
-						"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
-					},
-					"adobeScriptRunner.winAfterFxExe": {
+					"adobeScriptRunner.winAfterEffectsExe": {
 						"type": "string",
 						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2019/Support Files/AfterFX.exe",
 						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
+					},
+					"adobeScriptRunner.winExtendscriptToolkitExe": {
+						"type": "string",
+						"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
+						"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
 					},
 					"adobeScriptRunner.winIllustratorExe": {
 						"type": "string",
