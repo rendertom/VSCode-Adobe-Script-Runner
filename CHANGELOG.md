@@ -6,6 +6,26 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Added
 
+* 
+
+### Changed
+
+* 
+
+### Fixed
+
+* 
+
+### Removed
+
+* 
+
+---
+
+## [0.3.0] 2019-12-12
+
+### Added
+
 * Option to always **Execute File From Config** file defined in **Execute This** section, ignoring the one in active viewer.
 * Option to **Execute File From Token** `Adobe-Script-Runner "path/to/file.jsx"` in active document to execute file between the quotes.
 
@@ -13,10 +33,6 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 * Codebase rewritten from scratch.
 * Renamed configuration keys and titles.
-
-### Fixed
-
-* 
 
 ### Removed
 
