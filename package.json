@@ -56,6 +56,11 @@
 				"type": "object",
 				"title": "Adobe Script Runner configuration",
 				"properties": {
+					"adobeScriptRunner.bringHostApplicationToFront": {
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Mac only: Whether to bring the host application to the front."
+					},
 					"adobeScriptRunner.executeFileFromConfig": {
 						"type": "boolean",
 						"default": true,

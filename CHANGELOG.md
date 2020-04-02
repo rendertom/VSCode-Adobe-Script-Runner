@@ -6,7 +6,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Added
 
-* 
+* Option to toggle **Bring Host Application To Front** on execution for Mac.
 
 ### Changed
 
