@@ -88,7 +88,7 @@
 					},
 					"adobeScriptRunner.winAfterEffectsExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2019/Support Files/AfterFX.exe",
+						"default": "C:/Program Files/Adobe/Adobe After Effects 2020/Support Files/AfterFX.exe",
 						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
 					},
 					"adobeScriptRunner.winExtendscriptToolkitExe": {
@@ -98,12 +98,12 @@
 					},
 					"adobeScriptRunner.winIllustratorExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2019/Support Files/Contents/Windows/Illustrator.exe",
+						"default": "C:/Program Files/Adobe/Adobe Illustrator 2020/Support Files/Contents/Windows/Illustrator.exe",
 						"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
 					},
 					"adobeScriptRunner.winPhotoshopExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2019/Photoshop.exe",
+						"default": "C:/Program Files/Adobe/Adobe Photoshop 2020/Photoshop.exe",
 						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
 					}
 				}

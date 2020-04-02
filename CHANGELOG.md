@@ -10,7 +10,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Changed
 
-* 
+* Updates default Windows paths to 2020 application version.
 
 ### Fixed
 
