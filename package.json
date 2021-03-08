@@ -98,12 +98,12 @@
 					},
 					"adobeScriptRunner.winIllustratorExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Illustrator 2020/Support Files/Contents/Windows/Illustrator.exe",
+						"default": "C:/Program Files/Adobe/Adobe Illustrator 2021/Support Files/Contents/Windows/Illustrator.exe",
 						"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
 					},
 					"adobeScriptRunner.winPhotoshopExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Photoshop 2020/Photoshop.exe",
+						"default": "C:/Program Files/Adobe/Adobe Photoshop 2021/Photoshop.exe",
 						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
 					}
 				}
