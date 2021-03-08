@@ -85,13 +85,17 @@ The file path gets resolved by joining this path and the Workspace (or Root `/`)
 
 ## Settings
 
-Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension exposes the following settings:
+Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension exposes the following API:
 
 - `adobeScriptRunner.executeFileFromConfig`: Whether to execute file, defined in config `.vscode/settings.json` file. See more in [Execute this](#execute-this) section.
 - `adobeScriptRunner.executeFileFromToken`: Whether to search for `Adobe-Script-Runner "path/to/file.jsx"` token in active document, and execute file within the quotes. See more in [Token](#token) section.
 - `adobeScriptRunner.executeThis`: A path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. See more in [Execute this](#execute-this) section.
 - `adobeScriptRunner.saveFileBeforeExecution`: Whether to save file before execution.
 - `adobeScriptRunner.temporaryFile`: Path to a temporary file where Untitled document gets saved prior to execution.
+
+**For Mac users only:**
+
+- `adobeScriptRunner.bringHostApplicationToFront`: Whether to bring the host application to the front. If this option is turned off, then the **debug console** prints `1` if there were execution errors, otherwise `0`.
 
 **For Windows users only:**
 

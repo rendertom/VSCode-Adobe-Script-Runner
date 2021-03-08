@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -56,6 +56,11 @@
 				"type": "object",
 				"title": "Adobe Script Runner configuration",
 				"properties": {
+					"adobeScriptRunner.bringHostApplicationToFront": {
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Mac only: Whether to bring the host application to the front."
+					},
 					"adobeScriptRunner.executeFileFromConfig": {
 						"type": "boolean",
 						"default": true,
@@ -83,7 +88,7 @@
 					},
 					"adobeScriptRunner.winAfterEffectsExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe After Effects CC 2019/Support Files/AfterFX.exe",
+						"default": "C:/Program Files/Adobe/Adobe After Effects 2020/Support Files/AfterFX.exe",
 						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
 					},
 					"adobeScriptRunner.winExtendscriptToolkitExe": {
@@ -93,12 +98,12 @@
 					},
 					"adobeScriptRunner.winIllustratorExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Illustrator CC 2019/Support Files/Contents/Windows/Illustrator.exe",
+						"default": "C:/Program Files/Adobe/Adobe Illustrator 2021/Support Files/Contents/Windows/Illustrator.exe",
 						"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
 					},
 					"adobeScriptRunner.winPhotoshopExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Photoshop CC 2019/Photoshop.exe",
+						"default": "C:/Program Files/Adobe/Adobe Photoshop 2021/Photoshop.exe",
 						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
 					}
 				}
@@ -120,19 +125,18 @@
 		"Photoshop",
 		"InDesign"
 	],
-	"scripts": {
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "node ./node_modules/vscode/bin/test"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
 	},
+	"scripts": {
+		"package": "vsce package"
+	},
 	"devDependencies": {
-		"typescript": "^2.6.1",
-		"vscode": "^1.1.6",
-		"eslint": "^4.11.0",
+		"@types/mocha": "^2.2.42",
 		"@types/node": "^7.0.43",
-		"@types/mocha": "^2.2.42"
+		"eslint": "^4.11.0",
+		"vsce": "^1.85.1",
+		"vscode": "^1.1.6"
 	}
 }
