@@ -2,7 +2,7 @@
 	"name": "adobe-script-runner",
 	"displayName": "Adobe Script Runner",
 	"description": "Run Adobe scripts from VSCode",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"publisher": "renderTom",
 	"icon": "resources/icon.png",
 	"galleryBanner": {
@@ -88,7 +88,7 @@
 					},
 					"adobeScriptRunner.winAfterEffectsExe": {
 						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe After Effects 2020/Support Files/AfterFX.exe",
+						"default": "C:/Program Files/Adobe/Adobe After Effects 2021/Support Files/AfterFX.exe",
 						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
 					},
 					"adobeScriptRunner.winExtendscriptToolkitExe": {
