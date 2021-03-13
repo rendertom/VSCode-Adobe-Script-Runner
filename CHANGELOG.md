@@ -22,6 +22,14 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ---
 
+## [0.5.0] 2021-03-13
+
+### Changed
+
+- Updates default paths for Afterr Effects for Windows to 2021 application version.
+
+---
+
 ## [0.4.0] 2021-03-09
 
 ### Added
