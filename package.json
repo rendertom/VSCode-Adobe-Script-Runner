@@ -130,6 +130,7 @@
 		"url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
 	},
 	"scripts": {
+		"lint": "node_modules/.bin/eslint ./lib/",
 		"package": "vsce package"
 	},
 	"devDependencies": {
