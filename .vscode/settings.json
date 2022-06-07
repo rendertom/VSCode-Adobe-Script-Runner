@@ -1,4 +1,11 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
   "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
 }
