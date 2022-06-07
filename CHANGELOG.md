@@ -6,7 +6,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Added
 
--
+- ESLint + Prettier for a consistent codebase
 
 ### Changed
 
