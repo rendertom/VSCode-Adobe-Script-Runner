@@ -130,6 +130,7 @@
 		"url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
 	},
 	"scripts": {
+		"format": "node_modules/.bin/prettier --write .",
 		"lint": "node_modules/.bin/eslint ./lib/",
 		"package": "vsce package"
 	},
@@ -137,6 +138,9 @@
 		"@types/node": "^7.0.43",
 		"@types/vscode": "^1.21.0",
 		"eslint": "^8.17.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"prettier": "2.6.2",
 		"vsce": "^2.9.1"
 	}
 }
