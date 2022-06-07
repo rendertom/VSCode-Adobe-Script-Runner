@@ -11,11 +11,5 @@
       "jsx": true
     },
     "sourceType": "module"
-  },
-  "rules": {
-    "no-unreachable": "warn",
-    "no-unused-vars": "warn",
-    "semi": "warn",
-    "valid-typeof": "warn"
   }
 }
