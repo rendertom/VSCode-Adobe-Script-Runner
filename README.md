@@ -28,6 +28,7 @@ Adobe Script Runner executes script in the active viewer by default. However, wh
 ## Installation
 
 - ### From VSCode application
+
   - Open `Extensions` and type `Adobe Script Runner`.
   - Click `Install` and then `Reload` button.
 
@@ -48,7 +49,7 @@ Keyboard shortcut `Cmd+R` is bind to `adobeScriptRunner.ae` command, which will 
 - Open Keyboard Shortcuts editor and click on the link `keybindings.json`.
 - This will open the Default Keyboard Shortcuts on the left and your `keybindings.json` file where you can overwrite the default bindings on the right.
 - With `keybindings.json` in focus click `Cmd+K` twice to open an interactive keybinding modal window (or whatever it’s called) and follow the on-screen instructions. This will create a new binding entry in the `keybindings.json` file.
-- Edit the `command` property to `adobeScriptRunner.XX`, where XX is an abbreviation of the application. Check available abbreviations in `Extensions > Adobe Script Runner > Contributions` tab. 
+- Edit the `command` property to `adobeScriptRunner.XX`, where XX is an abbreviation of the application. Check available abbreviations in `Extensions > Adobe Script Runner > Contributions` tab.
 
 The result should look something like this:
 
