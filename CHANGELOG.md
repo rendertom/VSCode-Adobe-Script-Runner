@@ -6,14 +6,11 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Added
 
-- Support to execute scripts in `Adobe After Effects (Beta)`
-- Support to execute scripts in `Adobe Illustrator (Beta)`
-- Support to execute scripts in `Adobe Photoshop (Beta)`
-- ESLint + Prettier for a consistent codebase
+-
 
 ### Changed
 
-- Updates default paths for After Effects, Illustrator, and Photoshop for Windows to 2022 application versions.
+-
 
 ### Fixed
 
@@ -22,6 +19,21 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 ### Removed
 
 -
+
+---
+
+## [0.6.0] 2022-06-08
+
+### Added
+
+- Support to execute scripts in `Adobe After Effects (Beta)`
+- Support to execute scripts in `Adobe Illustrator (Beta)`
+- Support to execute scripts in `Adobe Photoshop (Beta)`
+- ESLint + Prettier for a consistent codebase
+
+### Changed
+
+- Updates default paths for After Effects, Illustrator, and Photoshop for Windows to 2022 application versions.
 
 ---
 
