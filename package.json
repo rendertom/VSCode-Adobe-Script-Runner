@@ -17,7 +17,9 @@
   ],
   "activationEvents": [
     "onCommand:adobeScriptRunner.ae",
+    "onCommand:adobeScriptRunner.ae-beta",
     "onCommand:adobeScriptRunner.ai",
+    "onCommand:adobeScriptRunner.ai-beta",
     "onCommand:adobeScriptRunner.estk",
     "onCommand:adobeScriptRunner.ic",
     "onCommand:adobeScriptRunner.id",
@@ -31,8 +33,16 @@
         "title": "Adobe After Effects"
       },
       {
+        "command": "adobeScriptRunner.ae-beta",
+        "title": "Adobe After Effects (Beta)"
+      },
+      {
         "command": "adobeScriptRunner.ai",
         "title": "Adobe Illustrator"
+      },
+      {
+        "command": "adobeScriptRunner.ai-beta",
+        "title": "Adobe Illustrator (Beta)"
       },
       {
         "command": "adobeScriptRunner.estk",
@@ -91,6 +101,11 @@
             "default": "C:/Program Files/Adobe/Adobe After Effects 2021/Support Files/AfterFX.exe",
             "description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
           },
+          "adobeScriptRunner.winAfterEffectsBetaExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe After Effects (Beta)/Support Files/AfterFX (Beta).exe",
+            "description": "Windows only: Path to Adobe After Effects (Beta) executable (AfterFX (Beta).exe)."
+          },
           "adobeScriptRunner.winExtendscriptToolkitExe": {
             "type": "string",
             "default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
@@ -100,6 +115,11 @@
             "type": "string",
             "default": "C:/Program Files/Adobe/Adobe Illustrator 2021/Support Files/Contents/Windows/Illustrator.exe",
             "description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
+          },
+          "adobeScriptRunner.winIllustratorBetaExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe Illustrator (Beta)/Support Files/Contents/Windows/Illustrator.exe",
+            "description": "Windows only: Path to Adobe Illustrator (Beta) executable (Illustrator.exe)."
           },
           "adobeScriptRunner.winPhotoshopExe": {
             "type": "string",
