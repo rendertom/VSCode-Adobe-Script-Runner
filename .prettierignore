@@ -1,0 +1,4 @@
+.node_modules
+
+# Ignore all Markdown files:
+*.md

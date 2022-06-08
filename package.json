@@ -1,142 +1,176 @@
 {
-	"name": "adobe-script-runner",
-	"displayName": "Adobe Script Runner",
-	"description": "Run Adobe scripts from VSCode",
-	"version": "0.5.0",
-	"publisher": "renderTom",
-	"icon": "resources/icon.png",
-	"galleryBanner": {
-		"color": "#34495E",
-		"theme": "dark"
-	},
-	"engines": {
-		"vscode": "^1.21.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:adobeScriptRunner.ae",
-		"onCommand:adobeScriptRunner.ai",
-		"onCommand:adobeScriptRunner.estk",
-		"onCommand:adobeScriptRunner.ic",
-		"onCommand:adobeScriptRunner.id",
-		"onCommand:adobeScriptRunner.psd"
-	],
-	"main": "./lib/extension",
-	"contributes": {
-		"commands": [
-			{
-				"command": "adobeScriptRunner.ae",
-				"title": "Adobe After Effects"
-			},
-			{
-				"command": "adobeScriptRunner.ai",
-				"title": "Adobe Illustrator"
-			},
-			{
-				"command": "adobeScriptRunner.estk",
-				"title": "Adobe ExtendScript Toolkit"
-			},
-			{
-				"command": "adobeScriptRunner.ic",
-				"title": "Adobe InCopy"
-			},
-			{
-				"command": "adobeScriptRunner.id",
-				"title": "Adobe InDesign"
-			},
-			{
-				"command": "adobeScriptRunner.psd",
-				"title": "Adobe Photoshop"
-			}
-		],
-		"configuration": [
-			{
-				"type": "object",
-				"title": "Adobe Script Runner configuration",
-				"properties": {
-					"adobeScriptRunner.bringHostApplicationToFront": {
-						"type": "boolean",
-						"default": true,
-						"markdownDescription": "Mac only: Whether to bring the host application to the front."
-					},
-					"adobeScriptRunner.executeFileFromConfig": {
-						"type": "boolean",
-						"default": true,
-						"markdownDescription": "Whether to execute file, defined in config `settings.json` file. This option is shadowed by **Execute File From Token** option. See more in [Execute this](https://github.com/rendertom/VSCode-Adobe-Script-Runner#execute-this) section."
-					},
-					"adobeScriptRunner.executeFileFromToken": {
-						"type": "boolean",
-						"default": true,
-						"markdownDescription": "Whether to search for `Adobe-Script-Runner \"path/to/file.jsx\"` token in active document, and execute file within the quotes. This option shadows **Execute File From Config** option. See more in [Token](https://github.com/rendertom/VSCode-Adobe-Script-Runner#token) section."
-					},
-					"adobeScriptRunner.executeThis": {
-						"type": "string",
-						"default": null,
-						"markdownDescription": "A path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. See more in [Execute this](https://github.com/rendertom/VSCode-Adobe-Script-Runner#execute-this) section."
-					},
-					"adobeScriptRunner.saveFileBeforeExecution": {
-						"type": "boolean",
-						"default": true,
-						"description": "Whether to save file before execution."
-					},
-					"adobeScriptRunner.temporaryFile": {
-						"type": "string",
-						"default": "~/.vscode/Snippet.js",
-						"description": "Path to a temporary file where Untitled document gets saved prior to execution."
-					},
-					"adobeScriptRunner.winAfterEffectsExe": {
-						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe After Effects 2021/Support Files/AfterFX.exe",
-						"description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
-					},
-					"adobeScriptRunner.winExtendscriptToolkitExe": {
-						"type": "string",
-						"default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
-						"description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
-					},
-					"adobeScriptRunner.winIllustratorExe": {
-						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Illustrator 2021/Support Files/Contents/Windows/Illustrator.exe",
-						"description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
-					},
-					"adobeScriptRunner.winPhotoshopExe": {
-						"type": "string",
-						"default": "C:/Program Files/Adobe/Adobe Photoshop 2021/Photoshop.exe",
-						"description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
-					}
-				}
-			}
-		],
-		"keybindings": [
-			{
-				"command": "adobeScriptRunner.ae",
-				"key": "ctrl+r",
-				"mac": "cmd+r",
-				"when": "editorTextFocus"
-			}
-		]
-	},
-	"keywords": [
-		"Adobe",
-		"Estk",
-		"After Effects",
-		"Photoshop",
-		"InDesign"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
-	},
-	"scripts": {
-		"package": "vsce package"
-	},
-	"devDependencies": {
-		"@types/mocha": "^2.2.42",
-		"@types/node": "^7.0.43",
-		"eslint": "^4.11.0",
-		"vsce": "^1.85.1",
-		"vscode": "^1.1.6"
-	}
+  "name": "adobe-script-runner",
+  "displayName": "Adobe Script Runner",
+  "description": "Run Adobe scripts from VSCode",
+  "version": "0.6.0",
+  "publisher": "renderTom",
+  "icon": "resources/icon.png",
+  "galleryBanner": {
+    "color": "#34495E",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.21.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:adobeScriptRunner.ae",
+    "onCommand:adobeScriptRunner.ae-beta",
+    "onCommand:adobeScriptRunner.ai",
+    "onCommand:adobeScriptRunner.ai-beta",
+    "onCommand:adobeScriptRunner.estk",
+    "onCommand:adobeScriptRunner.ic",
+    "onCommand:adobeScriptRunner.id",
+    "onCommand:adobeScriptRunner.psd",
+    "onCommand:adobeScriptRunner.psd-beta"
+  ],
+  "main": "./lib/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "adobeScriptRunner.ae",
+        "title": "Adobe After Effects"
+      },
+      {
+        "command": "adobeScriptRunner.ae-beta",
+        "title": "Adobe After Effects (Beta)"
+      },
+      {
+        "command": "adobeScriptRunner.ai",
+        "title": "Adobe Illustrator"
+      },
+      {
+        "command": "adobeScriptRunner.ai-beta",
+        "title": "Adobe Illustrator (Beta)"
+      },
+      {
+        "command": "adobeScriptRunner.estk",
+        "title": "Adobe ExtendScript Toolkit"
+      },
+      {
+        "command": "adobeScriptRunner.ic",
+        "title": "Adobe InCopy"
+      },
+      {
+        "command": "adobeScriptRunner.id",
+        "title": "Adobe InDesign"
+      },
+      {
+        "command": "adobeScriptRunner.psd",
+        "title": "Adobe Photoshop"
+      },
+      {
+        "command": "adobeScriptRunner.psd-beta",
+        "title": "Adobe Photoshop (Beta) (Windows only)"
+      }
+    ],
+    "configuration": [
+      {
+        "type": "object",
+        "title": "Adobe Script Runner configuration",
+        "properties": {
+          "adobeScriptRunner.bringHostApplicationToFront": {
+            "type": "boolean",
+            "default": true,
+            "markdownDescription": "Mac only: Whether to bring the host application to the front."
+          },
+          "adobeScriptRunner.executeFileFromConfig": {
+            "type": "boolean",
+            "default": true,
+            "markdownDescription": "Whether to execute file, defined in config `settings.json` file. This option is shadowed by **Execute File From Token** option. See more in [Execute this](https://github.com/rendertom/VSCode-Adobe-Script-Runner#execute-this) section."
+          },
+          "adobeScriptRunner.executeFileFromToken": {
+            "type": "boolean",
+            "default": true,
+            "markdownDescription": "Whether to search for `Adobe-Script-Runner \"path/to/file.jsx\"` token in active document, and execute file within the quotes. This option shadows **Execute File From Config** option. See more in [Token](https://github.com/rendertom/VSCode-Adobe-Script-Runner#token) section."
+          },
+          "adobeScriptRunner.executeThis": {
+            "type": "string",
+            "default": null,
+            "markdownDescription": "A path to a file to execute always, ignoring the file in the viewer, globally or per-project basis. See more in [Execute this](https://github.com/rendertom/VSCode-Adobe-Script-Runner#execute-this) section."
+          },
+          "adobeScriptRunner.saveFileBeforeExecution": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to save file before execution."
+          },
+          "adobeScriptRunner.temporaryFile": {
+            "type": "string",
+            "default": "~/.vscode/Snippet.js",
+            "description": "Path to a temporary file where Untitled document gets saved prior to execution."
+          },
+          "adobeScriptRunner.winAfterEffectsExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe After Effects 2022/Support Files/AfterFX.exe",
+            "description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
+          },
+          "adobeScriptRunner.winAfterEffectsBetaExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe After Effects (Beta)/Support Files/AfterFX (Beta).exe",
+            "description": "Windows only: Path to Adobe After Effects (Beta) executable (AfterFX (Beta).exe)."
+          },
+          "adobeScriptRunner.winExtendscriptToolkitExe": {
+            "type": "string",
+            "default": "C:/Program Files (x86)/Adobe/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.exe",
+            "description": "Windows only: Path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe)."
+          },
+          "adobeScriptRunner.winIllustratorExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe Illustrator 2022/Support Files/Contents/Windows/Illustrator.exe",
+            "description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
+          },
+          "adobeScriptRunner.winIllustratorBetaExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe Illustrator (Beta)/Support Files/Contents/Windows/Illustrator.exe",
+            "description": "Windows only: Path to Adobe Illustrator (Beta) executable (Illustrator.exe)."
+          },
+          "adobeScriptRunner.winPhotoshopExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe Photoshop 2022/Photoshop.exe",
+            "description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
+          },
+          "adobeScriptRunner.winPhotoshopBetaExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe Photoshop (Beta)/Photoshop.exe",
+            "description": "Windows only: Path to Adobe Photoshop (Beta) executable (Photoshop.exe)."
+          }
+        }
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "adobeScriptRunner.ae",
+        "key": "ctrl+r",
+        "mac": "cmd+r",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "keywords": [
+    "Adobe",
+    "Estk",
+    "After Effects",
+    "Photoshop",
+    "InDesign"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rendertom/VSCode-Adobe-Script-Runner.git"
+  },
+  "scripts": {
+    "format": "node_modules/.bin/prettier --write .",
+    "lint": "node_modules/.bin/eslint ./lib/",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.43",
+    "@types/vscode": "^1.21.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.6.2",
+    "vsce": "^2.9.1"
+  }
 }

@@ -1,0 +1,28 @@
+name: Install, lint and package
+on:
+  # Triggers the workflow on push or pull-request events for the master and Dev branches
+  push:
+    branches: [master, Dev]
+  pull_request:
+    branches: [master, Dev]
+
+jobs:
+  install-lint-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint codebase
+        run: npm run lint
+
+      - name: Create package
+        run: npm run package
