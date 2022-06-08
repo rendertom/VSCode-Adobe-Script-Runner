@@ -7,11 +7,14 @@ Script runner for Adobe applications right from VSCode. Extension available for 
 ## Supported applications
 
 - Adobe After Effects
+- Adobe After Effects (Beta)
 - Adobe ExtendScript Toolkit
 - Adobe Illustrator
+- Adobe Illustrator (Beta)
 - Adobe InCopy
 - Adobe InDesign
 - Adobe Photoshop
+- Adobe Photoshop (Beta)
 
 ## Features
 
@@ -33,6 +36,7 @@ Adobe Script Runner executes script in the active viewer by default. However, wh
   - Click `Install` and then `Reload` button.
 
 - ### From GitHub
+
   - Download repository and unzip the package.
   - Copy `VSCode-Adobe-Script-Runner-master` to `/Users/YOURUSER/.vscode/extensions` folder.
 
@@ -55,9 +59,9 @@ The result should look something like this:
 
 ```json
 {
-    "key": "cmd+r",
-    "command": "adobeScriptRunner.ae",
-    "when": "editorTextFocus"
+  "key": "cmd+r",
+  "command": "adobeScriptRunner.ae",
+  "when": "editorTextFocus"
 },
 ```
 
@@ -69,8 +73,8 @@ Use token to execute a different file, rather than the one in the viewer. Add `A
 
 ```javascript
 /*
-	Adobe-script-runner '../../index.js'
-	Executes file between quotes rather than the one in the active viewer.
+  Adobe-script-runner '../../index.js'
+  Executes file between quotes rather than the one in the active viewer.
 */
 
 alert('Hello World'); // This line never gets executed, unless `index.js` is referencing the file in viewer.
@@ -101,9 +105,12 @@ Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension expose
 **For Windows users only:**
 
 - `adobeScriptRunner.winAfterEffectsExe`: path to Adobe After Effects executable (AfterFX.exe).
+- `adobeScriptRunner.winAfterEffectsBetaExe`: path to Adobe After Effects (Beta) executable (AfterFX (Beta).exe).
 - `adobeScriptRunner.winExtendscriptToolkitExe`: path to Adobe ExtendScript Toolkit executable (ExtendScript Toolkit.exe).
 - `adobeScriptRunner.winIllustratorExe`: path to Adobe Illustrator executable (Illustrator.exe).
+- `adobeScriptRunner.winIllustratorBetaExe`: path to Adobe Illustrator (Beta) executable (Illustrator.exe).
 - `adobeScriptRunner.winPhotoshopExe`: path to Adobe Photoshop executable (Photoshop.exe).
+- `adobeScriptRunner.winPhotoshopBetaExe`: path to Adobe Photoshop (Beta) executable (Photoshop.exe).
 
 Executable paths for InCopy and InDesign for Windows are not exposed because they are handled differently than the rest of the Adobe apps. Go figure Adobe ¯\\\_(ツ)\_/¯
 
