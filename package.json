@@ -23,7 +23,8 @@
     "onCommand:adobeScriptRunner.estk",
     "onCommand:adobeScriptRunner.ic",
     "onCommand:adobeScriptRunner.id",
-    "onCommand:adobeScriptRunner.psd"
+    "onCommand:adobeScriptRunner.psd",
+    "onCommand:adobeScriptRunner.psd-beta"
   ],
   "main": "./lib/extension",
   "contributes": {
@@ -59,6 +60,10 @@
       {
         "command": "adobeScriptRunner.psd",
         "title": "Adobe Photoshop"
+      },
+      {
+        "command": "adobeScriptRunner.psd-beta",
+        "title": "Adobe Photoshop (Beta) (Windows only)"
       }
     ],
     "configuration": [
@@ -125,6 +130,11 @@
             "type": "string",
             "default": "C:/Program Files/Adobe/Adobe Photoshop 2021/Photoshop.exe",
             "description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
+          },
+          "adobeScriptRunner.winPhotoshopBetaExe": {
+            "type": "string",
+            "default": "C:/Program Files/Adobe/Adobe Photoshop (Beta)/Photoshop.exe",
+            "description": "Windows only: Path to Adobe Photoshop (Beta) executable (Photoshop.exe)."
           }
         }
       }
