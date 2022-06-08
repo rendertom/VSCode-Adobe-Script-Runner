@@ -13,7 +13,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 ### Changed
 
--
+- Updates default paths for After Effects, Illustrator, and Photoshop for Windows to 2022 application versions.
 
 ### Fixed
 

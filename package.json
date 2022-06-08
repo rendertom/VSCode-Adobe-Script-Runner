@@ -103,7 +103,7 @@
           },
           "adobeScriptRunner.winAfterEffectsExe": {
             "type": "string",
-            "default": "C:/Program Files/Adobe/Adobe After Effects 2021/Support Files/AfterFX.exe",
+            "default": "C:/Program Files/Adobe/Adobe After Effects 2022/Support Files/AfterFX.exe",
             "description": "Windows only: Path to Adobe After Effects executable (AfterFX.exe)."
           },
           "adobeScriptRunner.winAfterEffectsBetaExe": {
@@ -118,7 +118,7 @@
           },
           "adobeScriptRunner.winIllustratorExe": {
             "type": "string",
-            "default": "C:/Program Files/Adobe/Adobe Illustrator 2021/Support Files/Contents/Windows/Illustrator.exe",
+            "default": "C:/Program Files/Adobe/Adobe Illustrator 2022/Support Files/Contents/Windows/Illustrator.exe",
             "description": "Windows only: Path to Adobe Illustrator executable (Illustrator.exe)."
           },
           "adobeScriptRunner.winIllustratorBetaExe": {
@@ -128,7 +128,7 @@
           },
           "adobeScriptRunner.winPhotoshopExe": {
             "type": "string",
-            "default": "C:/Program Files/Adobe/Adobe Photoshop 2021/Photoshop.exe",
+            "default": "C:/Program Files/Adobe/Adobe Photoshop 2022/Photoshop.exe",
             "description": "Windows only: Path to Adobe Photoshop executable (Photoshop.exe)."
           },
           "adobeScriptRunner.winPhotoshopBetaExe": {
