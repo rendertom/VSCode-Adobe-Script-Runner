@@ -8,6 +8,7 @@ All notable changes to the Adobe Script Runner extension will be documented in t
 
 - Support to execute scripts in `Adobe After Effects (Beta)`
 - Support to execute scripts in `Adobe Illustrator (Beta)`
+- Support to execute scripts in `Adobe Photoshop (Beta)`
 - ESLint + Prettier for a consistent codebase
 
 ### Changed

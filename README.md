@@ -14,6 +14,7 @@ Script runner for Adobe applications right from VSCode. Extension available for 
 - Adobe InCopy
 - Adobe InDesign
 - Adobe Photoshop
+- Adobe Photoshop (Beta)
 
 ## Features
 
@@ -109,6 +110,7 @@ Click `Cmd+,` on Mac or `Ctrl+,` on Windows to modify settings. Extension expose
 - `adobeScriptRunner.winIllustratorExe`: path to Adobe Illustrator executable (Illustrator.exe).
 - `adobeScriptRunner.winIllustratorBetaExe`: path to Adobe Illustrator (Beta) executable (Illustrator.exe).
 - `adobeScriptRunner.winPhotoshopExe`: path to Adobe Photoshop executable (Photoshop.exe).
+- `adobeScriptRunner.winPhotoshopBetaExe`: path to Adobe Photoshop (Beta) executable (Photoshop.exe).
 
 Executable paths for InCopy and InDesign for Windows are not exposed because they are handled differently than the rest of the Adobe apps. Go figure Adobe ¯\\\_(ツ)\_/¯
 
