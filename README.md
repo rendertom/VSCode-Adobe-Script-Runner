@@ -29,16 +29,9 @@ Map keyboard shortcuts to execute a script even faster - `Cmd+R` is bind to run 
 Adobe Script Runner executes script in the active viewer by default. However, when working with multi-file scripts, it is common to set a path to execute a master file, i.e `index.js`, from within a file that's in the active view. Such behavior can be modified using [Token](#token) or setting up [execute this](#execute-this) file in the settings.
 
 ## Installation
-
-- ### From VSCode application
-
-  - Open `Extensions` and type `Adobe Script Runner`.
-  - Click `Install` and then `Reload` button.
-
-- ### From GitHub
-
   - Download repository and unzip the package.
-  - Copy `VSCode-Adobe-Script-Runner-master` to `/Users/YOURUSER/.vscode/extensions` folder.
+  - In VSCode, open `Command Palette` with keyboard shortcut `F1` or `Cmd+Shift+P`, and type `>Developer: Install Extension From Location...`.
+  - Choose `VSCode-Adobe-Script-Runner-master`, which was unzipped in the first step.
 
 ## In action
 
